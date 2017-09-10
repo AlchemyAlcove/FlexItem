@@ -2,6 +2,8 @@
 
 React components for styling grids with css flexboxes. Uses styled-components under the hood.
 
+[![CircleCI](https://circleci.com/gh/AlchemyAlcove/FlexItem/tree/master.svg?style=svg)](https://circleci.com/gh/AlchemyAlcove/FlexItem/tree/master)
+
 ## Example
 
 ```javascript
