@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/AlchemyAlcove/FlexItem"
   },
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src",
     "lint:css": "stylelint \"./**/*.style.js\"",
