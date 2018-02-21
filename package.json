@@ -1,6 +1,6 @@
 {
   "name": "flex-item",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "description": "React components for styling grids with css flexboxes. Uses styled-components under the hood.",
   "author": "AlchemyAlcove",
