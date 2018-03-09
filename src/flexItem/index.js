@@ -33,4 +33,3 @@ FlexItem.defaultProps = {
 };
 
 module.exports = FlexItem;
-
