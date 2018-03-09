@@ -36,7 +36,8 @@ const FlexGridStyle = styled.div`
 
     &.max-1 {
       > .flex-item {
-        flex: 0 0 calc(100% / 1);
+        flex: 0 0;
+        flex-basis: calc(100% / 1);
         padding: 0 0 6px;
 
         &:nth-child(n + 2) {
@@ -52,7 +53,8 @@ const FlexGridStyle = styled.div`
 
     &.max-2 {
       > .flex-item {
-        flex: 0 0 calc(100% / 2);
+        flex: 0 0;
+        flex-basis: calc(100% / 2);
 
         &:nth-child(2n) {
           padding-right: 0;
@@ -74,7 +76,8 @@ const FlexGridStyle = styled.div`
 
     &.max-3 {
       > .flex-item {
-        flex: 0 0 calc(100% / 3);
+        flex: 0 0;
+        flex-basis: calc(100% / 3);
 
         &:nth-child(3n) {
           padding-right: 0;
@@ -96,7 +99,8 @@ const FlexGridStyle = styled.div`
 
     &.max-4 {
       > .flex-item {
-        flex: 0 0 calc(100% / 4);
+        flex: 0 0;
+        flex-basis: calc(100% / 4);
 
         &:nth-child(4n) {
           padding-right: 0;
@@ -118,7 +122,8 @@ const FlexGridStyle = styled.div`
 
     &.max-5 {
       > .flex-item {
-        flex: 0 0 calc(100% / 5);
+        flex: 0 0;
+        flex-basis: calc(100% / 5);
 
         &:nth-child(5n) {
           padding-right: 0;
@@ -140,7 +145,8 @@ const FlexGridStyle = styled.div`
 
     &.max-6 {
       > .flex-item {
-        flex: 0 0 calc(100% / 6);
+        flex: 0 0;
+        flex-basis: calc(100% / 6);
 
         &:nth-child(6n) {
           padding-right: 0;
@@ -162,7 +168,8 @@ const FlexGridStyle = styled.div`
 
     &.max-7 {
       > .flex-item {
-        flex: 0 0 calc(100% / 7);
+        flex: 0 0;
+        flex-basis: calc(100% / 7);
 
         &:nth-child(7n) {
           padding-right: 0;
@@ -184,7 +191,8 @@ const FlexGridStyle = styled.div`
 
     &.max-8 {
       > .flex-item {
-        flex: 0 0 calc(100% / 8);
+        flex: 0 0;
+        flex-basis: calc(100% / 8);
 
         &:nth-child(8n) {
           padding-right: 0;
@@ -206,7 +214,8 @@ const FlexGridStyle = styled.div`
 
     &.max-9 {
       > .flex-item {
-        flex: 0 0 calc(100% / 9);
+        flex: 0 0;
+        flex-basis: calc(100% / 9);
 
         &:nth-child(9n) {
           padding-right: 0;
@@ -228,7 +237,8 @@ const FlexGridStyle = styled.div`
 
     &.max-10 {
       > .flex-item {
-        flex: 0 0 calc(100% / 10);
+        flex: 0 0;
+        flex-basis: calc(100% / 10);
 
         &:nth-child(10n) {
           padding-right: 0;
@@ -250,7 +260,8 @@ const FlexGridStyle = styled.div`
 
     &.max-11 {
       > .flex-item {
-        flex: 0 0 calc(100% / 11);
+        flex: 0 0;
+        flex-basis: calc(100% / 11);
 
         &:nth-child(11n) {
           padding-right: 0;
@@ -272,7 +283,8 @@ const FlexGridStyle = styled.div`
 
     &.max-12 {
       > .flex-item {
-        flex: 0 0 calc(100% / 12);
+        flex: 0 0;
+        flex-basis: calc(100% / 12);
 
         &:nth-child(12n) {
           padding-right: 0;
@@ -298,7 +310,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-1 {
       > .flex-item {
-        flex: 0 0 calc(100% / 1);
+        flex: 0 0;
+        flex-basis: calc(100% / 1);
         padding: 6px 0;
 
         &:first-child {
@@ -313,7 +326,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-2 {
       > .flex-item {
-        flex: 0 0 calc(100% / 2);
+        flex: 0 0;
+        flex-basis: calc(100% / 2);
 
         &:nth-child(2n) {
           padding-right: 0;
@@ -335,7 +349,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-3 {
       > .flex-item {
-        flex: 0 0 calc(100% / 3);
+        flex: 0 0;
+        flex-basis: calc(100% / 3);
 
         &:nth-child(3n) {
           padding-right: 0;
@@ -357,7 +372,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-4 {
       > .flex-item {
-        flex: 0 0 calc(100% / 4);
+        flex: 0 0;
+        flex-basis: calc(100% / 4);
 
         &:nth-child(4n) {
           padding-right: 0;
@@ -379,7 +395,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-5 {
       > .flex-item {
-        flex: 0 0 calc(100% / 5);
+        flex: 0 0;
+        flex-basis: calc(100% / 5);
 
         &:nth-child(5n) {
           padding-right: 0;
@@ -401,7 +418,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-6 {
       > .flex-item {
-        flex: 0 0 calc(100% / 6);
+        flex: 0 0;
+        flex-basis: calc(100% / 6);
 
         &:nth-child(6n) {
           padding-right: 0;
@@ -423,7 +441,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-7 {
       > .flex-item {
-        flex: 0 0 calc(100% / 7);
+        flex: 0 0;
+        flex-basis: calc(100% / 7);
 
         &:nth-child(7n) {
           padding-right: 0;
@@ -445,7 +464,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-8 {
       > .flex-item {
-        flex: 0 0 calc(100% / 8);
+        flex: 0 0;
+        flex-basis: calc(100% / 8);
 
         &:nth-child(8n) {
           padding-right: 0;
@@ -467,7 +487,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-9 {
       > .flex-item {
-        flex: 0 0 calc(100% / 9);
+        flex: 0 0;
+        flex-basis: calc(100% / 9);
 
         &:nth-child(9n) {
           padding-right: 0;
@@ -489,7 +510,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-10 {
       > .flex-item {
-        flex: 0 0 calc(100% / 10);
+        flex: 0 0;
+        flex-basis: calc(100% / 10);
 
         &:nth-child(10n) {
           padding-right: 0;
@@ -511,7 +533,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-11 {
       > .flex-item {
-        flex: 0 0 calc(100% / 11);
+        flex: 0 0;
+        flex-basis: calc(100% / 11);
 
         &:nth-child(11n) {
           padding-right: 0;
@@ -533,7 +556,8 @@ const FlexGridStyle = styled.div`
 
     &.tablet-max-12 {
       > .flex-item {
-        flex: 0 0 calc(100% / 12);
+        flex: 0 0;
+        flex-basis: calc(100% / 12);
 
         &:nth-child(12n) {
           padding-right: 0;
@@ -559,7 +583,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-1 {
       > .flex-item {
-        flex: 0 0 calc(100% / 1);
+        flex: 0 0;
+        flex-basis: calc(100% / 1);
         padding: 6px 0;
 
         &:first-child {
@@ -574,7 +599,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-2 {
       > .flex-item {
-        flex: 0 0 calc(100% / 2);
+        flex: 0 0;
+        flex-basis: calc(100% / 2);
 
         &:nth-child(2n) {
           padding-right: 0;
@@ -596,7 +622,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-3 {
       > .flex-item {
-        flex: 0 0 calc(100% / 3);
+        flex: 0 0;
+        flex-basis: calc(100% / 3);
 
         &:nth-child(3n) {
           padding-right: 0;
@@ -618,7 +645,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-4 {
       > .flex-item {
-        flex: 0 0 calc(100% / 4);
+        flex: 0 0;
+        flex-basis: calc(100% / 4);
 
         &:nth-child(4n) {
           padding-right: 0;
@@ -640,7 +668,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-5 {
       > .flex-item {
-        flex: 0 0 calc(100% / 5);
+        flex: 0 0;
+        flex-basis: calc(100% / 5);
 
         &:nth-child(5n) {
           padding-right: 0;
@@ -662,7 +691,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-6 {
       > .flex-item {
-        flex: 0 0 calc(100% / 6);
+        flex: 0 0;
+        flex-basis: calc(100% / 6);
 
         &:nth-child(6n) {
           padding-right: 0;
@@ -684,7 +714,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-7 {
       > .flex-item {
-        flex: 0 0 calc(100% / 7);
+        flex: 0 0;
+        flex-basis: calc(100% / 7);
 
         &:nth-child(7n) {
           padding-right: 0;
@@ -706,7 +737,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-8 {
       > .flex-item {
-        flex: 0 0 calc(100% / 8);
+        flex: 0 0;
+        flex-basis: calc(100% / 8);
 
         &:nth-child(8n) {
           padding-right: 0;
@@ -728,7 +760,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-9 {
       > .flex-item {
-        flex: 0 0 calc(100% / 9);
+        flex: 0 0;
+        flex-basis: calc(100% / 9);
 
         &:nth-child(9n) {
           padding-right: 0;
@@ -750,7 +783,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-10 {
       > .flex-item {
-        flex: 0 0 calc(100% / 10);
+        flex: 0 0;
+        flex-basis: calc(100% / 10);
 
         &:nth-child(10n) {
           padding-right: 0;
@@ -772,7 +806,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-11 {
       > .flex-item {
-        flex: 0 0 calc(100% / 11);
+        flex: 0 0;
+        flex-basis: calc(100% / 11);
 
         &:nth-child(11n) {
           padding-right: 0;
@@ -794,7 +829,8 @@ const FlexGridStyle = styled.div`
 
     &.mobile-max-12 {
       > .flex-item {
-        flex: 0 0 calc(100% / 12);
+        flex: 0 0;
+        flex-basis: calc(100% / 12);
 
         &:nth-child(12n) {
           padding-right: 0;
