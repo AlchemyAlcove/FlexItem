@@ -1,7 +1,7 @@
-import { isNil } from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 import Style from "./flex.style";
+import { isNil } from "lodash";
 
 class FlexGrid extends React.Component {
   render() {
