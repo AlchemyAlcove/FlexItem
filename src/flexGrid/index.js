@@ -1,24 +1,63 @@
 import PropTypes from "prop-types";
 import React from "react";
 import Style from "./flex.style";
-import { isNil } from "lodash";
+import { isArray, isNil } from "lodash";
+import { withTheme } from "styled-components";
 
 class FlexGrid extends React.Component {
+  calcMaxPerRow(children) {
+    let max = 0;
+    children.forEach((child) => {
+      if(!isNil(child) && !isNil(child.props) && !isNil(child.props.size)) {
+        max += child.props.size;
+      } else if(!isNil(child)) {
+        max++;
+      }
+    });
+    return(max);
+  }
+
+  renderItems(children) {
+    if(isNil(children)) {
+      return(null);
+    } else if(isArray(children)) {
+      return(children.map((element, index) => {
+        return(this.renderItem(element, index, this.calcMaxPerRow(children)));
+      }));
+    } else {
+      return(this.renderItem(children, 1, 1));
+    }
+  }
+
+  renderItem(item, index, length) {
+    if(isNil(item)) {
+      return(null);
+    } else if(isArray(item)) {
+      return(this.renderItems(item));
+    } else {
+      let props = {...item.props};
+      if(!isNil(item.type) && !isNil(item.type.displayName)) {
+        let maxPerRow = this.props.maxPerRow || length;
+        if(this.props.theme.aspect === "mobile" && !isNil(this.props.maxMobileRow)) {
+          maxPerRow = this.props.maxMobileRow;
+        } else if(this.props.theme.aspect === "tablet" && !isNil(this.props.maxTabletRow)) {
+          maxPerRow = this.props.maxTabletRow;
+        }
+        props["maxPerRow"] = maxPerRow;
+      }
+      return(<item.type key={index} {...props}/>);
+    }
+  }
+
   render() {
     let classes = "flex-grid ";
-    if(!isNil(this.props.maxPerRow)) {
-      classes += "max-" + this.props.maxPerRow + " ";
-    }
-    if(!isNil(this.props.maxTabletRow) && this.props.maxTabletRow !== 0) {
-      classes += "tablet-max-" + this.props.maxTabletRow + " ";
-    }
-    if(!isNil(this.props.maxMobileRow) && this.props.maxMobileRow !== 0) {
-      classes += "mobile-max-" + this.props.maxMobileRow + " ";
+    if(!isNil(this.props.className)) {
+      classes = classes + " " + this.props.className;
     }
 
     return(
-      <Style className={classes + this.props.className} style={this.props.style}>
-        {this.props.children}
+      <Style className={classes} style={this.props.style}>
+        {this.renderItems(this.props.children)}
       </Style>
     );
   }
@@ -28,6 +67,7 @@ FlexGrid.propTypes = {
   className: PropTypes.string,
   maxMobileRow: PropTypes.number,
   maxPerRow: PropTypes.number,
+  maxTabletRow: PropTypes.number,
   style: PropTypes.object
 };
 
@@ -38,4 +78,4 @@ FlexGrid.defaultProps = {
   style: {}
 };
 
-module.exports = FlexGrid;
+export default withTheme(FlexGrid);
