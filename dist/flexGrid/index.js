@@ -54,13 +54,18 @@ var FlexGrid = function (_React$Component) {
 
       if ((0, _isArray3.default)(this.props.children)) {
         return this.props.children.map(function (element, index) {
-          var maxPerRow = _this2.props.maxPerRow || _this2.props.children.length;
-          if (_this2.props.theme.aspect === "mobile" && !(0, _isNil3.default)(_this2.props.maxMobileRow)) {
-            maxPerRow = _this2.props.maxMobileRow;
-          } else if (_this2.props.theme.aspect === "tablet" && !(0, _isNil3.default)(_this2.props.maxTabletRow)) {
-            maxPerRow = _this2.props.maxTabletRow;
+          var props = _extends({}, element.props);
+          if (!(0, _isNil3.default)(element.type.displayName)) {
+            var maxPerRow = _this2.props.maxPerRow || _this2.props.children.length;
+            if (_this2.props.theme.aspect === "mobile" && !(0, _isNil3.default)(_this2.props.maxMobileRow)) {
+              maxPerRow = _this2.props.maxMobileRow;
+            } else if (_this2.props.theme.aspect === "tablet" && !(0, _isNil3.default)(_this2.props.maxTabletRow)) {
+              maxPerRow = _this2.props.maxTabletRow;
+            }
+            props["maxPerRow"] = maxPerRow;
           }
-          return _react2.default.createElement(element.type, _extends({ key: index }, element.props, { maxPerRow: maxPerRow }));
+
+          return _react2.default.createElement(element.type, _extends({ key: index }, props));
         });
       } else {
         return this.props.children;
