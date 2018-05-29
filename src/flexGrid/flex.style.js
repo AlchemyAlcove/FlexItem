@@ -7,6 +7,5 @@ export default styled.div`
   justify-content: flex-start;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 0 6px;
   width: 100%;
 `;

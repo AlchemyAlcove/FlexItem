@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin: 0;\n  padding: 0 6px;\n  max-width: 100%;\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin: 0;\n  padding: 0 6px;\n  max-width: 100%;\n"]);
+var _templateObject = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin: 0;\n  max-width: 100%;\n"], ["\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  margin: 0;\n  max-width: 100%;\n"]);
 
 var _styledComponents = require("styled-components");
 
