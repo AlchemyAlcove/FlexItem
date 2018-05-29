@@ -1,5 +1,13 @@
 "use strict";
 
+var _isNil2 = require("lodash/isNil");
+
+var _isNil3 = _interopRequireDefault(_isNil2);
+
+var _cloneDeep2 = require("lodash/cloneDeep");
+
+var _cloneDeep3 = _interopRequireDefault(_cloneDeep2);
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _propTypes = require("prop-types");
@@ -14,7 +22,7 @@ var _flex = require("./flex.style");
 
 var _flex2 = _interopRequireDefault(_flex);
 
-var _lodash = require("lodash");
+var _styledComponents = require("styled-components");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37,13 +45,22 @@ var FlexItem = function (_React$Component) {
     key: "render",
     value: function render() {
       var classes = "flex-item";
-      if (!(0, _lodash.isNil)(this.props.className)) {
+      if (!(0, _isNil3.default)(this.props.className)) {
         classes = classes + " " + this.props.className;
       }
 
+      var size = this.props.size;
+      var style = (0, _cloneDeep3.default)(this.props.style);
+      if (this.props.theme.aspect === "mobile") {
+        size = this.props.mobileSize || this.props.size;
+      } else if (this.props.theme.aspect === "tablet") {
+        size = this.props.tabletSize || this.props.size;
+      }
+      style["flexBasis"] = size / this.props.maxPerRow * 100 + "%";
+
       return _react2.default.createElement(
         _flex2.default,
-        { size: this.props.size, mobileSize: this.props.mobileSize || this.props.size, tabletSize: this.props.tabletSize || this.props.size, className: classes, style: this.props.style },
+        { className: classes, style: style },
         this.props.children
       );
     }
@@ -54,16 +71,18 @@ var FlexItem = function (_React$Component) {
 
 FlexItem.propTypes = {
   className: _propTypes2.default.string,
-  size: _propTypes2.default.number,
+  maxPerRow: _propTypes2.default.number,
   mobileSize: _propTypes2.default.number,
+  size: _propTypes2.default.number,
   style: _propTypes2.default.object,
   tabletSize: _propTypes2.default.number
 };
 
 FlexItem.defaultProps = {
   classname: "",
+  maxPerRow: 1,
   size: 1,
   style: {}
 };
 
-module.exports = FlexItem;
+module.exports = (0, _styledComponents.withTheme)(FlexItem);

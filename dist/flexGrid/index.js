@@ -1,8 +1,16 @@
 "use strict";
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _isNil2 = require("lodash/isNil");
 
-var _lodash = require("lodash");
+var _isNil3 = _interopRequireDefault(_isNil2);
+
+var _isArray2 = require("lodash/isArray");
+
+var _isArray3 = _interopRequireDefault(_isArray2);
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _propTypes = require("prop-types");
 
@@ -15,6 +23,8 @@ var _react2 = _interopRequireDefault(_react);
 var _flex = require("./flex.style");
 
 var _flex2 = _interopRequireDefault(_flex);
+
+var _styledComponents = require("styled-components");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34,23 +44,36 @@ var FlexGrid = function (_React$Component) {
   }
 
   _createClass(FlexGrid, [{
+    key: "renderItems",
+    value: function renderItems() {
+      var _this2 = this;
+
+      if ((0, _isArray3.default)(this.props.children)) {
+        return this.props.children.map(function (element, index) {
+          var maxPerRow = _this2.props.maxPerRow || _this2.props.children.length;
+          if (_this2.props.theme.aspect === "mobile" && !(0, _isNil3.default)(_this2.props.maxMobileRow)) {
+            maxPerRow = _this2.props.maxMobileRow;
+          } else if (_this2.props.theme.aspect === "tablet" && !(0, _isNil3.default)(_this2.props.maxTabletRow)) {
+            maxPerRow = _this2.props.maxTabletRow;
+          }
+          return _react2.default.createElement(element.type, _extends({ key: index }, element.props, { maxPerRow: maxPerRow }));
+        });
+      } else {
+        return this.props.children;
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var classes = "flex-grid ";
-      if (!(0, _lodash.isNil)(this.props.maxPerRow)) {
-        classes += "max-" + this.props.maxPerRow + " ";
-      }
-      if (!(0, _lodash.isNil)(this.props.maxTabletRow) && this.props.maxTabletRow !== 0) {
-        classes += "tablet-max-" + this.props.maxTabletRow + " ";
-      }
-      if (!(0, _lodash.isNil)(this.props.maxMobileRow) && this.props.maxMobileRow !== 0) {
-        classes += "mobile-max-" + this.props.maxMobileRow + " ";
+      if (!(0, _isNil3.default)(this.props.className)) {
+        classes = classes + " " + this.props.className;
       }
 
       return _react2.default.createElement(
         _flex2.default,
-        { className: classes + this.props.className, style: this.props.style },
-        this.props.children
+        { className: classes, style: this.props.style },
+        this.renderItems()
       );
     }
   }]);
@@ -72,4 +95,4 @@ FlexGrid.defaultProps = {
   style: {}
 };
 
-module.exports = FlexGrid;
+module.exports = (0, _styledComponents.withTheme)(FlexGrid);
