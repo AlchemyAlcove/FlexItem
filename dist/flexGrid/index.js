@@ -55,7 +55,7 @@ var FlexGrid = function (_React$Component) {
       if ((0, _isArray3.default)(this.props.children)) {
         return this.props.children.map(function (element, index) {
           var props = _extends({}, element.props);
-          if (!(0, _isNil3.default)(element.type.displayName)) {
+          if (!(0, _isNil3.default)(element.type) && !(0, _isNil3.default)(element.type.displayName)) {
             var maxPerRow = _this2.props.maxPerRow || _this2.props.children.length;
             if (_this2.props.theme.aspect === "mobile" && !(0, _isNil3.default)(_this2.props.maxMobileRow)) {
               maxPerRow = _this2.props.maxMobileRow;
