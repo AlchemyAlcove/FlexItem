@@ -54,6 +54,8 @@ var FlexGrid = function (_React$Component) {
       children.forEach(function (child) {
         if (!(0, _isNil3.default)(child.props) && !(0, _isNil3.default)(child.props.size)) {
           max += child.props.size;
+        } else {
+          max++;
         }
       });
       return max;

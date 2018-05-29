@@ -66,13 +66,13 @@ class App extends React.Component {
               <p>Simple column based data organization is easy by just creating flex items in a flex grid.</p>
               <br/>
               <FlexGrid className="three-column-example">
-                <FlexItem className="column-one" size={4}>
+                <FlexItem className="column-one">
                   <div>Thing1</div>
                 </FlexItem>
-                <FlexItem className="column-two" size={8}>
+                <FlexItem className="column-two" size={2}>
                   <div>Thing2</div>
                 </FlexItem>
-                <FlexItem className="column-three" size={4}>
+                <FlexItem className="column-three" size={1}>
                   <div>Thing3</div>
                 </FlexItem>
               </FlexGrid>

@@ -10,6 +10,8 @@ class FlexGrid extends React.Component {
     children.forEach((child) => {
       if(!isNil(child.props) && !isNil(child.props.size)) {
         max += child.props.size;
+      } else {
+        max++;
       }
     });
     return(max);
