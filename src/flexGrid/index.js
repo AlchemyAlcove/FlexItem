@@ -39,6 +39,7 @@ FlexGrid.propTypes = {
   className: PropTypes.string,
   maxMobileRow: PropTypes.number,
   maxPerRow: PropTypes.number,
+  maxTabletRow: PropTypes.number,
   style: PropTypes.object
 };
 

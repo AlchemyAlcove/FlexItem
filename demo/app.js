@@ -58,68 +58,66 @@ class App extends React.Component {
 
   render() {
     return(
-      <div ref="container">
-        <ThemeProvider theme={{aspect: this.state.aspect, dimensions: Dimensions}}>
-          <Style className="demo-grids">
-            <FlexGrid>
-              <FlexItem>
-                <h2>Simple 3 column grid</h2>
-                <p>Simple column based data organization is easy by just creating flex items in a flex grid.</p>
-                <br/>
-                <FlexGrid className="three-column-example" maxTabletRow={3}>
-                  <FlexItem className="column-one">
-                    <div>Thing1</div>
-                  </FlexItem>
-                  <FlexItem className="column-two">
-                    <div>Thing2</div>
-                  </FlexItem>
-                  <FlexItem className="column-three">
-                    <div>Thing3</div>
-                  </FlexItem>
-                </FlexGrid>
-                <br/>
-                <br/>
-                <br/>
-                <h2>Max 7 column grid</h2>
-                <p>FlexItem allows you to control how many items show in each row.</p>
-                <br/>
-                <FlexGrid maxPerRow={7} maxTabletRow={4} className="seven-column-example">
-                  <FlexItem tabletSize={4} className="column-one">
-                    <div>Thing1</div>
-                  </FlexItem>
-                  <FlexItem size={2} tabletSize={3} className="column-two">
-                    <div>Thing2</div>
-                  </FlexItem>
-                  <FlexItem tabletSize={1} className="column-three">
-                    <div>Thing3</div>
-                  </FlexItem>
-                  <FlexItem size={3} tabletSize={4} className="column-four">
-                    <div>Thing4</div>
-                  </FlexItem>
-                  <FlexItem className="column-five">
-                    <div>Thing5</div>
-                  </FlexItem>
-                  <FlexItem className="column-six">
-                    <div>Thing6</div>
-                  </FlexItem>
-                  <FlexItem className="column-seven">
-                    <div>Thing7</div>
-                  </FlexItem>
-                  <FlexItem className="column-eight">
-                    <div>Thing8</div>
-                  </FlexItem>
-                  <FlexItem className="column-nine">
-                    <div>Thing9</div>
-                  </FlexItem>
-                  <FlexItem className="column-ten">
-                    <div>Thing10</div>
-                  </FlexItem>
-                </FlexGrid>
-              </FlexItem>
-            </FlexGrid>
-          </Style>
-        </ThemeProvider>
-      </div>
+      <ThemeProvider theme={{aspect: this.state.aspect, dimensions: Dimensions}}>
+        <Style className="demo-grids">
+          <FlexGrid>
+            <FlexItem>
+              <h2>Simple 3 column grid</h2>
+              <p>Simple column based data organization is easy by just creating flex items in a flex grid.</p>
+              <br/>
+              <FlexGrid className="three-column-example" maxTabletRow={3}>
+                <FlexItem className="column-one">
+                  <div>Thing1</div>
+                </FlexItem>
+                <FlexItem className="column-two">
+                  <div>Thing2</div>
+                </FlexItem>
+                <FlexItem className="column-three">
+                  <div>Thing3</div>
+                </FlexItem>
+              </FlexGrid>
+              <br/>
+              <br/>
+              <br/>
+              <h2>Max 7 column grid</h2>
+              <p>FlexItem allows you to control how many items show in each row.</p>
+              <br/>
+              <FlexGrid maxPerRow={7} maxTabletRow={4} className="seven-column-example">
+                <FlexItem tabletSize={4} className="column-one">
+                  <div>Thing1</div>
+                </FlexItem>
+                <FlexItem size={2} tabletSize={3} className="column-two">
+                  <div>Thing2</div>
+                </FlexItem>
+                <FlexItem tabletSize={1} className="column-three">
+                  <div>Thing3</div>
+                </FlexItem>
+                <FlexItem size={3} tabletSize={4} className="column-four">
+                  <div>Thing4</div>
+                </FlexItem>
+                <FlexItem className="column-five">
+                  <div>Thing5</div>
+                </FlexItem>
+                <FlexItem className="column-six">
+                  <div>Thing6</div>
+                </FlexItem>
+                <FlexItem className="column-seven">
+                  <div>Thing7</div>
+                </FlexItem>
+                <FlexItem className="column-eight">
+                  <div>Thing8</div>
+                </FlexItem>
+                <FlexItem className="column-nine">
+                  <div>Thing9</div>
+                </FlexItem>
+                <FlexItem className="column-ten">
+                  <div>Thing10</div>
+                </FlexItem>
+              </FlexGrid>
+            </FlexItem>
+          </FlexGrid>
+        </Style>
+      </ThemeProvider>
     );
   }
 }
