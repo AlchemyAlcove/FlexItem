@@ -49,26 +49,34 @@ var FlexGrid = function (_React$Component) {
 
   _createClass(FlexGrid, [{
     key: "renderItems",
-    value: function renderItems() {
+    value: function renderItems(children) {
       var _this2 = this;
 
-      if ((0, _isArray3.default)(this.props.children)) {
-        return this.props.children.map(function (element, index) {
-          var props = _extends({}, element.props);
-          if (!(0, _isNil3.default)(element.type) && !(0, _isNil3.default)(element.type.displayName)) {
-            var maxPerRow = _this2.props.maxPerRow || _this2.props.children.length;
-            if (_this2.props.theme.aspect === "mobile" && !(0, _isNil3.default)(_this2.props.maxMobileRow)) {
-              maxPerRow = _this2.props.maxMobileRow;
-            } else if (_this2.props.theme.aspect === "tablet" && !(0, _isNil3.default)(_this2.props.maxTabletRow)) {
-              maxPerRow = _this2.props.maxTabletRow;
-            }
-            props["maxPerRow"] = maxPerRow;
-          }
-
-          return _react2.default.createElement(element.type, _extends({ key: index }, props));
+      if ((0, _isArray3.default)(children)) {
+        return children.map(function (element, index) {
+          return _this2.renderItem(element, index, children.length);
         });
       } else {
-        return this.props.children;
+        return this.renderItem(children, 1, 1);
+      }
+    }
+  }, {
+    key: "renderItem",
+    value: function renderItem(item, index, length) {
+      if ((0, _isArray3.default)(item)) {
+        return this.renderItems(item);
+      } else {
+        var props = _extends({}, item.props);
+        if (!(0, _isNil3.default)(item.type) && !(0, _isNil3.default)(item.type.displayName)) {
+          var maxPerRow = this.props.maxPerRow || length;
+          if (this.props.theme.aspect === "mobile" && !(0, _isNil3.default)(this.props.maxMobileRow)) {
+            maxPerRow = this.props.maxMobileRow;
+          } else if (this.props.theme.aspect === "tablet" && !(0, _isNil3.default)(this.props.maxTabletRow)) {
+            maxPerRow = this.props.maxTabletRow;
+          }
+          props["maxPerRow"] = maxPerRow;
+        }
+        return _react2.default.createElement(item.type, _extends({ key: index }, props));
       }
     }
   }, {
@@ -82,7 +90,7 @@ var FlexGrid = function (_React$Component) {
       return _react2.default.createElement(
         _flex2.default,
         { className: classes, style: this.props.style },
-        this.renderItems()
+        this.renderItems(this.props.children)
       );
     }
   }]);

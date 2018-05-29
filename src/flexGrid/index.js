@@ -5,24 +5,31 @@ import { isArray, isNil } from "lodash";
 import { withTheme } from "styled-components";
 
 class FlexGrid extends React.Component {
-  renderItems() {
-    if(isArray(this.props.children)) {
-      return(this.props.children.map((element, index) => {
-        let props = {...element.props};
-        if(!isNil(element.type) && !isNil(element.type.displayName)) {
-          let maxPerRow = this.props.maxPerRow || this.props.children.length;
-          if(this.props.theme.aspect === "mobile" && !isNil(this.props.maxMobileRow)) {
-            maxPerRow = this.props.maxMobileRow;
-          } else if(this.props.theme.aspect === "tablet" && !isNil(this.props.maxTabletRow)) {
-            maxPerRow = this.props.maxTabletRow;
-          }
-          props["maxPerRow"] = maxPerRow;
-        }
-
-        return(<element.type key={index} {...props}/>);
+  renderItems(children) {
+    if(isArray(children)) {
+      return(children.map((element, index) => {
+        return(this.renderItem(element, index, children.length));
       }));
     } else {
-      return(this.props.children);
+      return(this.renderItem(children, 1, 1));
+    }
+  }
+
+  renderItem(item, index, length) {
+    if(isArray(item)) {
+      return(this.renderItems(item));
+    } else {
+      let props = {...item.props};
+      if(!isNil(item.type) && !isNil(item.type.displayName)) {
+        let maxPerRow = this.props.maxPerRow || length;
+        if(this.props.theme.aspect === "mobile" && !isNil(this.props.maxMobileRow)) {
+          maxPerRow = this.props.maxMobileRow;
+        } else if(this.props.theme.aspect === "tablet" && !isNil(this.props.maxTabletRow)) {
+          maxPerRow = this.props.maxTabletRow;
+        }
+        props["maxPerRow"] = maxPerRow;
+      }
+      return(<item.type key={index} {...props}/>);
     }
   }
 
@@ -34,7 +41,7 @@ class FlexGrid extends React.Component {
 
     return(
       <Style className={classes} style={this.props.style}>
-        {this.renderItems()}
+        {this.renderItems(this.props.children)}
       </Style>
     );
   }
