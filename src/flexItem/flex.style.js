@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FlexItemStyle = styled.div`
+export default styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,5 +8,3 @@ const FlexItemStyle = styled.div`
   padding: 0 6px;
   max-width: 100%;
 `;
-
-module.exports = FlexItemStyle;

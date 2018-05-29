@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FlexGridStyle = styled.div`
+export default styled.div`
   position: relative;
   display: flex;
   max-width: ${props => props.theme.dimensions.containerWidth}px;
@@ -10,5 +10,3 @@ const FlexGridStyle = styled.div`
   padding: 0 6px;
   width: 100%;
 `;
-
-module.exports = FlexGridStyle;

@@ -1,7 +1,7 @@
 import FlexGrid from "./flexGrid";
 import FlexItem from "./flexItem";
 
-module.exports = {
+export default {
   FlexGrid: FlexGrid,
   FlexItem: FlexItem
 };

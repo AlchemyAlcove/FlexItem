@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _isNil2 = require("lodash/isNil");
 
 var _isNil3 = _interopRequireDefault(_isNil2);
@@ -85,4 +89,4 @@ FlexItem.defaultProps = {
   style: {}
 };
 
-module.exports = (0, _styledComponents.withTheme)(FlexItem);
+exports.default = (0, _styledComponents.withTheme)(FlexItem);
