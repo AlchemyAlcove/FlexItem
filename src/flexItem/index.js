@@ -1,32 +1,10 @@
+import Inner from "./flex";
 import PropTypes from "prop-types";
-import React from "react";
-import Style from "./flex.style";
-import { cloneDeep, isNil } from "lodash";
-import { withTheme } from "styled-components";
+import React from "react"; // eslint-disable-line no-unused-vars
 
-class FlexItem extends React.Component {
-  render() {
-    let classes = "flex-item";
-    if(!isNil(this.props.className)) {
-      classes = classes + " " + this.props.className;
-    }
-
-    let size = this.props.size;
-    let style = cloneDeep(this.props.style);
-    if(this.props.theme.aspect === "mobile") {
-      size = this.props.mobileSize || this.props.size;
-    } else if(this.props.theme.aspect === "tablet") {
-      size = this.props.tabletSize || this.props.size;
-    }
-    style["flexBasis"] = size / this.props.maxPerRow * 100 + "%";
-
-    return(
-      <Style className={classes} style={style}>
-        { this.props.children }
-      </Style>
-    );
-  }
-}
+const FlexItem = (props) => {
+  return(<Inner {...props}/>);
+};
 
 FlexItem.propTypes = {
   className: PropTypes.string,
@@ -44,4 +22,4 @@ FlexItem.defaultProps = {
   style: {}
 };
 
-module.exports = withTheme(FlexItem);
+export default FlexItem;
