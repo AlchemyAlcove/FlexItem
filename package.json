@@ -16,6 +16,7 @@
     "build": "babel src --out-dir dist",
     "performance": "node_modules/.bin/webpack --env.performance --env.production --progress",
     "production": "node_modules/.bin/webpack --env.production --progress",
+    "security": "node_modules/nsp/bin/nsp check",
     "test": "ava"
   },
   "dependencies": {
