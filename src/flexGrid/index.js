@@ -8,13 +8,18 @@ class FlexGrid extends React.Component {
   renderItems() {
     if(isArray(this.props.children)) {
       return(this.props.children.map((element, index) => {
-        let maxPerRow = this.props.maxPerRow || this.props.children.length;
-        if(this.props.theme.aspect === "mobile" && !isNil(this.props.maxMobileRow)) {
-          maxPerRow = this.props.maxMobileRow;
-        } else if(this.props.theme.aspect === "tablet" && !isNil(this.props.maxTabletRow)) {
-          maxPerRow = this.props.maxTabletRow;
+        let props = {...element.props};
+        if(!isNil(element.type.displayName)) {
+          let maxPerRow = this.props.maxPerRow || this.props.children.length;
+          if(this.props.theme.aspect === "mobile" && !isNil(this.props.maxMobileRow)) {
+            maxPerRow = this.props.maxMobileRow;
+          } else if(this.props.theme.aspect === "tablet" && !isNil(this.props.maxTabletRow)) {
+            maxPerRow = this.props.maxTabletRow;
+          }
+          props["maxPerRow"] = maxPerRow;
         }
-        return(<element.type key={index} {...element.props} maxPerRow={maxPerRow}/>);
+
+        return(<element.type key={index} {...props}/>);
       }));
     } else {
       return(this.props.children);

@@ -193,6 +193,16 @@ But on tablet the column ratios are all different.
   }
 ```
 
+### Note
+
+Adding anything other than a FlexItem as a child of FlexGrid can cause the following error.
+
+```javascript
+Warning: React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: undefined.
+```
+
+This is due to passing props to children.
+
 ## Demo
 
 The demo app runs Webpack.
