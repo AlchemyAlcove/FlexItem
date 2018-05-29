@@ -48,13 +48,24 @@ var FlexGrid = function (_React$Component) {
   }
 
   _createClass(FlexGrid, [{
+    key: "calcMaxPerRow",
+    value: function calcMaxPerRow(children) {
+      var max = 0;
+      children.forEach(function (child) {
+        if (!(0, _isNil3.default)(child.props) && !(0, _isNil3.default)(child.props.size)) {
+          max += child.props.size;
+        }
+      });
+      return max;
+    }
+  }, {
     key: "renderItems",
     value: function renderItems(children) {
       var _this2 = this;
 
       if ((0, _isArray3.default)(children)) {
         return children.map(function (element, index) {
-          return _this2.renderItem(element, index, children.length);
+          return _this2.renderItem(element, index, _this2.calcMaxPerRow(children));
         });
       } else {
         return this.renderItem(children, 1, 1);

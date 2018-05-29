@@ -5,10 +5,20 @@ import { isArray, isNil } from "lodash";
 import { withTheme } from "styled-components";
 
 class FlexGrid extends React.Component {
+  calcMaxPerRow(children) {
+    let max = 0;
+    children.forEach((child) => {
+      if(!isNil(child.props) && !isNil(child.props.size)) {
+        max += child.props.size;
+      }
+    });
+    return(max);
+  }
+
   renderItems(children) {
     if(isArray(children)) {
       return(children.map((element, index) => {
-        return(this.renderItem(element, index, children.length));
+        return(this.renderItem(element, index, this.calcMaxPerRow(children)));
       }));
     } else {
       return(this.renderItem(children, 1, 1));
