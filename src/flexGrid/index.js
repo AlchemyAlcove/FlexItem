@@ -8,9 +8,9 @@ class FlexGrid extends React.Component {
   calcMaxPerRow(children) {
     let max = 0;
     children.forEach((child) => {
-      if(!isNil(child.props) && !isNil(child.props.size)) {
+      if(!isNil(child) && !isNil(child.props) && !isNil(child.props.size)) {
         max += child.props.size;
-      } else {
+      } else if(!isNil(child)) {
         max++;
       }
     });
@@ -18,7 +18,9 @@ class FlexGrid extends React.Component {
   }
 
   renderItems(children) {
-    if(isArray(children)) {
+    if(isNil(children)) {
+      return(null);
+    } else if(isArray(children)) {
       return(children.map((element, index) => {
         return(this.renderItem(element, index, this.calcMaxPerRow(children)));
       }));
@@ -28,7 +30,9 @@ class FlexGrid extends React.Component {
   }
 
   renderItem(item, index, length) {
-    if(isArray(item)) {
+    if(isNil(item)) {
+      return(null);
+    } else if(isArray(item)) {
       return(this.renderItems(item));
     } else {
       let props = {...item.props};

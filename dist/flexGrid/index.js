@@ -52,9 +52,9 @@ var FlexGrid = function (_React$Component) {
     value: function calcMaxPerRow(children) {
       var max = 0;
       children.forEach(function (child) {
-        if (!(0, _isNil3.default)(child.props) && !(0, _isNil3.default)(child.props.size)) {
+        if (!(0, _isNil3.default)(child) && !(0, _isNil3.default)(child.props) && !(0, _isNil3.default)(child.props.size)) {
           max += child.props.size;
-        } else {
+        } else if (!(0, _isNil3.default)(child)) {
           max++;
         }
       });
@@ -65,7 +65,9 @@ var FlexGrid = function (_React$Component) {
     value: function renderItems(children) {
       var _this2 = this;
 
-      if ((0, _isArray3.default)(children)) {
+      if ((0, _isNil3.default)(children)) {
+        return null;
+      } else if ((0, _isArray3.default)(children)) {
         return children.map(function (element, index) {
           return _this2.renderItem(element, index, _this2.calcMaxPerRow(children));
         });
@@ -76,7 +78,9 @@ var FlexGrid = function (_React$Component) {
   }, {
     key: "renderItem",
     value: function renderItem(item, index, length) {
-      if ((0, _isArray3.default)(item)) {
+      if ((0, _isNil3.default)(item)) {
+        return null;
+      } else if ((0, _isArray3.default)(item)) {
         return this.renderItems(item);
       } else {
         var props = _extends({}, item.props);
