@@ -50,7 +50,13 @@ class FlexGrid extends React.Component {
   }
 
   render() {
-    let classes = "flex-grid ";
+    let classes = "flex-grid";
+    if(this.props.container) {
+      classes += " flex-grid-container";
+    }
+    if(this.props.verticalContainer) {
+      classes += " flex-grid-vertical-container";
+    }
     if(!isNil(this.props.className)) {
       classes = classes + " " + this.props.className;
     }
@@ -65,17 +71,21 @@ class FlexGrid extends React.Component {
 
 FlexGrid.propTypes = {
   className: PropTypes.string,
+  container: PropTypes.bool,
   maxMobileRow: PropTypes.number,
   maxPerRow: PropTypes.number,
   maxTabletRow: PropTypes.number,
-  style: PropTypes.object
+  style: PropTypes.object,
+  verticalContainer: PropTypes.bool
 };
 
 FlexGrid.defaultProps = {
   className: "",
+  container: false,
   maxMobileRow: 1,
   maxTabletRow: 1,
-  style: {}
+  style: {},
+  verticalContainer: false
 };
 
 export default withTheme(FlexGrid);

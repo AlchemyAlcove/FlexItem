@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(["\n  position: relative;\n  display: flex;\n  max-width: ", "px;\n  justify-content: flex-start;\n  flex-wrap: wrap;\n  margin: 0 auto;\n  width: 100%;\n"], ["\n  position: relative;\n  display: flex;\n  max-width: ", "px;\n  justify-content: flex-start;\n  flex-wrap: wrap;\n  margin: 0 auto;\n  width: 100%;\n"]);
+var _templateObject = _taggedTemplateLiteral(["\n  &.flex-grid {\n    position: relative;\n    display: flex;\n    max-width: ", "px;\n    justify-content: flex-start;\n    flex-wrap: wrap;\n    margin: 0 auto;\n    width: 100%;\n\n    &.flex-grid-container {\n      margin-left: -", "px;\n      margin-right: -", "px;\n      width: calc(100% + 6px);\n      max-width: calc(100% + 6px);\n\n      > .flex-item {\n        padding-left: ", "px;\n        padding-right: ", "px;\n      }\n    }\n\n    &.flex-grid-vertical-container {\n      margin-top: -", "px;\n      margin-bottom: -", "px;\n\n      > .flex-item {\n        padding-top: ", "px;\n        padding-bottom: ", "px;\n      }\n    }\n  }\n"], ["\n  &.flex-grid {\n    position: relative;\n    display: flex;\n    max-width: ", "px;\n    justify-content: flex-start;\n    flex-wrap: wrap;\n    margin: 0 auto;\n    width: 100%;\n\n    &.flex-grid-container {\n      margin-left: -", "px;\n      margin-right: -", "px;\n      width: calc(100% + 6px);\n      max-width: calc(100% + 6px);\n\n      > .flex-item {\n        padding-left: ", "px;\n        padding-right: ", "px;\n      }\n    }\n\n    &.flex-grid-vertical-container {\n      margin-top: -", "px;\n      margin-bottom: -", "px;\n\n      > .flex-item {\n        padding-top: ", "px;\n        padding-bottom: ", "px;\n      }\n    }\n  }\n"]);
 
 var _styledComponents = require("styled-components");
 
@@ -15,5 +15,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 exports.default = _styledComponents2.default.div(_templateObject, function (props) {
-  return props.theme.dimensions.containerWidth;
+  return (props.theme.dimensions || {}).containerWidth || 1200;
+}, function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
+}, function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
+}, function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
+}, function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
+}, function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
+}, function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
+}, function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
+}, function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
 });

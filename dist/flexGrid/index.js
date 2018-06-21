@@ -99,7 +99,13 @@ var FlexGrid = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var classes = "flex-grid ";
+      var classes = "flex-grid";
+      if (this.props.container) {
+        classes += " flex-grid-container";
+      }
+      if (this.props.verticalContainer) {
+        classes += " flex-grid-vertical-container";
+      }
       if (!(0, _isNil3.default)(this.props.className)) {
         classes = classes + " " + this.props.className;
       }
@@ -117,17 +123,21 @@ var FlexGrid = function (_React$Component) {
 
 FlexGrid.propTypes = {
   className: _propTypes2.default.string,
+  container: _propTypes2.default.bool,
   maxMobileRow: _propTypes2.default.number,
   maxPerRow: _propTypes2.default.number,
   maxTabletRow: _propTypes2.default.number,
-  style: _propTypes2.default.object
+  style: _propTypes2.default.object,
+  verticalContainer: _propTypes2.default.bool
 };
 
 FlexGrid.defaultProps = {
   className: "",
+  container: false,
   maxMobileRow: 1,
   maxTabletRow: 1,
-  style: {}
+  style: {},
+  verticalContainer: false
 };
 
 exports.default = (0, _styledComponents.withTheme)(FlexGrid);
