@@ -8,21 +8,21 @@ module.exports = Styled.div`
         text-align: center;
       }
 
-      .column-one {
+      .column-one div {
         background: red;
       }
 
-      .column-two {
+      .column-two div {
         background: green;
       }
 
-      .column-three {
+      .column-three div {
         background: blue;
       }
     }
 
     .seven-column-example {
-      .flex-item {
+      .flex-item div {
         text-align: center;
         background: #EEEEEE;
         border: 1px solid black;

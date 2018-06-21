@@ -13,14 +13,16 @@ FlexItem is 3 seperate tools in 1.
 ## Installing
 
 ```shell
-npm install --save styled-components styled-components-grid
+npm install --save styled-components
 ```
 
 ## ThemeProvider Requirements
 
-This component requires a theme provider from styled-components library. Specifically looks for a **dimensions** and an **aspect** variable. dimensions is an object that should have a containerWidth, desktopBreakpoint, or tabletBreakpoint attribute. aspect is a string with options "desktop", "tablet", or "mobile". This should represent the current aspect ratio the user is on.
+This component requires a theme provider from styled-components library. Specifically looks for a **dimensions** and an **aspect** variable. dimensions is an object that should have a columnPadding, containerWidth, desktopBreakpoint, or tabletBreakpoint attribute. aspect is a string with options "desktop", "tablet", or "mobile". This should represent the current aspect ratio the user is on.
 
-The **containerWidth** attribute provides a container or max with for the Flex Grid. If you set a containerWidth of 1200 for example, that would limit the FlexGrid to 1200px wide.
+The **columnPadding** attribute provides a Flex Grid with padding around each first child. This defaults to 3 if nothing is set. This is only used with container prop attribute.
+
+The **containerWidth** attribute provides a container or max with for the Flex Grid. If you set a containerWidth of 1200 for example, that would limit the FlexGrid to 1200px wide. This defaults to 1200px.
 
 The **desktopBreakpoint** is first pixel in which the browser size is considered a desktop browser. If you set a desktopBreakpoint of 992 for example, that would start using the tablet media queries at 991px.
 
@@ -35,6 +37,7 @@ FlexGrid starts a responsive row. FlexItem represents a column in the row.
 FlexGrid has 5 props available.
 
 - className - Allows custom class names on component. FlexGrid always has a flex-grid class for convenience.
+- container - Adds padding around each first child elements.
 - maxMobileRow - Define maximum columns in a row before wrapping for mobile aspect ratio. Defaults to 1. This gives a vertical effect.
 - maxPerRow - Define maximum columns in a row before wrapping.
 - maxTabletRow - Define maximum columns in a row before wrapping for tablet aspect ratio. Defaults to 1. This gives a vertical effect.
@@ -51,7 +54,7 @@ FlexItem has 6 props available.
 ## Responsive Grid
 
 ```javascript
-   <FlexGrid>
+   <FlexGrid container>
      <FlexItem>
        <div>Thing1</div>
      </FlexItem>
