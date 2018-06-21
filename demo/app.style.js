@@ -26,7 +26,6 @@ module.exports = Styled.div`
         text-align: center;
         background: #EEEEEE;
         border: 1px solid black;
-        margin-bottom: 5px;
       }
     }
   }

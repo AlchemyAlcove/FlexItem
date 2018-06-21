@@ -11,12 +11,24 @@ export default styled.div`
     width: 100%;
 
     &.flex-grid-container {
-      margin: 0 -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+      margin-left: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+      margin-right: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
       width: calc(100% + 6px);
       max-width: calc(100% + 6px);
 
       > .flex-item {
-        padding: 0 ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+        padding-left: ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+        padding-right: ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+      }
+    }
+
+    &.flex-grid-vertical-container {
+      margin-top: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+      margin-bottom: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+
+      > .flex-item {
+        padding-top: ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+        padding-bottom: ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
       }
     }
   }

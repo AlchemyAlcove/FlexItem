@@ -65,7 +65,7 @@ class App extends React.Component {
               <h2>Simple 3 column grid</h2>
               <p>Simple column based data organization is easy by just creating flex items in a flex grid.</p>
               <br/>
-              <FlexGrid container className="three-column-example">
+              <FlexGrid container verticalContainer className="three-column-example">
                 <FlexItem className="column-one">
                   <div>Thing1</div>
                 </FlexItem>
@@ -82,7 +82,7 @@ class App extends React.Component {
               <h2>Max 7 column grid</h2>
               <p>FlexItem allows you to control how many items show in each row.</p>
               <br/>
-              <FlexGrid container maxPerRow={7} maxTabletRow={4} className="seven-column-example">
+              <FlexGrid container verticalContainer maxPerRow={7} maxTabletRow={4} className="seven-column-example">
                 <FlexItem tabletSize={4} className="column-one">
                   <div>Thing1</div>
                 </FlexItem>
