@@ -12,6 +12,8 @@ export default styled.div`
 
     &.flex-grid-container {
       margin: 0 -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+      width: calc(100% + 6px);
+      max-width: calc(100% + 6px);
 
       > .flex-item {
         padding: 0 ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
