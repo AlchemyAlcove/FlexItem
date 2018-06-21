@@ -103,6 +103,9 @@ var FlexGrid = function (_React$Component) {
       if (this.props.container) {
         classes += " flex-grid-container";
       }
+      if (this.props.verticalContainer) {
+        classes += " flex-grid-vertical-container";
+      }
       if (!(0, _isNil3.default)(this.props.className)) {
         classes = classes + " " + this.props.className;
       }
@@ -124,7 +127,8 @@ FlexGrid.propTypes = {
   maxMobileRow: _propTypes2.default.number,
   maxPerRow: _propTypes2.default.number,
   maxTabletRow: _propTypes2.default.number,
-  style: _propTypes2.default.object
+  style: _propTypes2.default.object,
+  verticalContainer: _propTypes2.default.bool
 };
 
 FlexGrid.defaultProps = {
@@ -132,7 +136,8 @@ FlexGrid.defaultProps = {
   container: false,
   maxMobileRow: 1,
   maxTabletRow: 1,
-  style: {}
+  style: {},
+  verticalContainer: false
 };
 
 exports.default = (0, _styledComponents.withTheme)(FlexGrid);
