@@ -16,8 +16,7 @@
     "build": "babel src --out-dir dist",
     "performance": "node_modules/.bin/webpack --env.performance --env.production --progress",
     "production": "node_modules/.bin/webpack --env.production --progress",
-    "security": "node_modules/nsp/bin/nsp check",
-    "test": "ava"
+    "security": "node_modules/nsp/bin/nsp check"
   },
   "dependencies": {
     "babel-polyfill": ">= 6",
@@ -27,7 +26,6 @@
     "styled-components": ">= 1"
   },
   "devDependencies": {
-    "ava": "0.25.0",
     "babel-cli": "6.26.0",
     "babel-eslint": "8.2.2",
     "babel-loader": "7.1.4",
@@ -63,14 +61,5 @@
     "webpack-bundle-analyzer": "2.11.2",
     "webpack-cli": "2.1.3",
     "webpack-dev-server": "3.1.4"
-  },
-  "ava": {
-    "concurrency": 5,
-    "failFast": true,
-    "failWithoutAssertions": false,
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
   }
 }
