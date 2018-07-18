@@ -9,6 +9,7 @@ module.exports = {
     "quotes": ["error", "double"],
     "keyword-spacing": ["error", {"before": true, "after": false, "overrides": {"else": {"after": true}, "from": {"after": true}, "import": {"after": true}, "case": {"after": true}}}],
     "space-unary-ops": [2, {"words": true, "nonwords": false, "overrides": {"typeof": false}}],
-    "react/jsx-uses-vars": [2]
+    "react/jsx-uses-vars": [2],
+    "emotion/syntax-preference": [2, "string"]
   }
 };
