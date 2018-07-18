@@ -22,11 +22,11 @@
   "dependencies": {
     "babel-polyfill": ">= 6",
     "emotion": ">= 9",
-    "emotion-theming": "^9.2.6",
+    "emotion-theming": ">= 9",
     "lodash": ">= 4",
     "react": ">= 15",
     "react-dom": ">= 15",
-    "react-emotion": "^9.2.6"
+    "react-emotion": ">= 9"
   },
   "devDependencies": {
     "ava": "0.25.0",
@@ -34,6 +34,7 @@
     "babel-eslint": "8.2.2",
     "babel-loader": "7.1.4",
     "babel-plugin-array-includes": "2.0.3",
+    "babel-plugin-emotion": "9.2.6",
     "babel-plugin-lodash": "3.3.2",
     "babel-plugin-transform-es2015-modules-commonjs": "6.26.0",
     "babel-plugin-transform-object-assign": "6.22.0",
@@ -45,7 +46,7 @@
     "eslint": "4.18.2",
     "eslint-config-standard": "11.0.0",
     "eslint-loader": "2.0.0",
-    "eslint-plugin-emotion": "^9.2.6",
+    "eslint-plugin-emotion": "9.2.6",
     "eslint-plugin-import": "2.9.0",
     "eslint-plugin-node": "6.0.1",
     "eslint-plugin-promise": "3.7.0",
