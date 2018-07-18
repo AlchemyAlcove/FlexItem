@@ -1,6 +1,6 @@
-import Styled from "styled-components";
+import styled from "react-emotion";
 
-module.exports = Styled.div`
+module.exports = styled("div")`
   &.demo-grids {
     .three-column-example {
       .column-one, .column-two, .column-three {

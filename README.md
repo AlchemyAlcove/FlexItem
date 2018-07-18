@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/AlchemyAlcove/FlexItem/tree/master.svg?style=svg)](https://circleci.com/gh/AlchemyAlcove/FlexItem/tree/master)
 
-Responsive grid components for react and styled-components 💅.
+Responsive grid components for react and emotion.
 
 FlexItem is 3 seperate tools in 1.
 
@@ -13,12 +13,12 @@ FlexItem is 3 seperate tools in 1.
 ## Installing
 
 ```shell
-npm install --save styled-components
+npm install --save emotion flex-item
 ```
 
 ## ThemeProvider Requirements
 
-This component requires a theme provider from styled-components library. Specifically looks for a **dimensions** and an **aspect** variable. dimensions is an object that should have a columnPadding, containerWidth, desktopBreakpoint, rowPadding, or tabletBreakpoint attribute. aspect is a string with options "desktop", "tablet", or "mobile". This should represent the current aspect ratio the user is on.
+This component requires a theme provider from the emotion library. Specifically looks for a **dimensions** and an **aspect** variable. dimensions is an object that should have a columnPadding, containerWidth, desktopBreakpoint, rowPadding, or tabletBreakpoint attribute. aspect is a string with options "desktop", "tablet", or "mobile". This should represent the current aspect ratio the user is on.
 
 The **columnPadding** attribute provides a Flex Grid with padding around each first tier children. This defaults to 3 if nothing is set. This is only used with container prop attribute.
 
@@ -140,7 +140,7 @@ But on tablet the column ratios are all different.
 ```javascript
   import React from "react";
   import { render } from "react-dom";
-  import { ThemeProvider } from "styled-components";
+  import { ThemeProvider } from "emotion-theming";
 
   class App extends React.Component {
     constructor(props) {
@@ -231,7 +231,7 @@ Contributors to this project should:
 
 ```javascript
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "emotion-theming";
 
 class Example extends React.Component {
   render() {

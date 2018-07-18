@@ -4,7 +4,8 @@ import FlexItem from "../src/flexItem";
 import React from "react";
 import Style from "./app.style";
 import { render } from "react-dom";
-import { injectGlobal, ThemeProvider } from "styled-components";
+import { injectGlobal } from "emotion";
+import { ThemeProvider } from "emotion-theming";
 
 injectGlobal`
   * {
