@@ -26,7 +26,7 @@ var _flex = require("./flex.style");
 
 var _flex2 = _interopRequireDefault(_flex);
 
-var _emotionTheming = require("emotion-theming");
+var _styledComponents = require("styled-components");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -89,4 +89,4 @@ FlexItem.defaultProps = {
   style: {}
 };
 
-exports.default = (0, _emotionTheming.withTheme)(FlexItem);
+exports.default = (0, _styledComponents.withTheme)(FlexItem);

@@ -4,6 +4,5 @@
 .gitignore
 README.md
 circle.yml
-index.js
 node_modules
 test

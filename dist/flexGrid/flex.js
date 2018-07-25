@@ -28,7 +28,7 @@ var _flex = require("./flex.style");
 
 var _flex2 = _interopRequireDefault(_flex);
 
-var _emotionTheming = require("emotion-theming");
+var _styledComponents = require("styled-components");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -48,64 +48,28 @@ var FlexGrid = function (_React$Component) {
   }
 
   _createClass(FlexGrid, [{
-    key: "calcMaxPerRow",
-    value: function calcMaxPerRow(children) {
-      var max = 0;
-      children.forEach(function (child) {
-        if (!(0, _isNil3.default)(child) && !(0, _isNil3.default)(child.props) && !(0, _isNil3.default)(child.props.size)) {
-          max += child.props.size;
-        } else if (!(0, _isNil3.default)(child)) {
-          max++;
-        }
-      });
-      return max;
-    }
-  }, {
     key: "renderItems",
-    value: function renderItems(children) {
+    value: function renderItems() {
       var _this2 = this;
 
-      if ((0, _isNil3.default)(children)) {
-        return null;
-      } else if ((0, _isArray3.default)(children)) {
-        return children.map(function (element, index) {
-          return _this2.renderItem(element, index, _this2.calcMaxPerRow(children));
+      if ((0, _isArray3.default)(this.props.children)) {
+        return this.props.children.map(function (element, index) {
+          var maxPerRow = _this2.props.maxPerRow || _this2.props.children.length;
+          if (_this2.props.theme.aspect === "mobile" && !(0, _isNil3.default)(_this2.props.maxMobileRow)) {
+            maxPerRow = _this2.props.maxMobileRow;
+          } else if (_this2.props.theme.aspect === "tablet" && !(0, _isNil3.default)(_this2.props.maxTabletRow)) {
+            maxPerRow = _this2.props.maxTabletRow;
+          }
+          return _react2.default.createElement(element.type, _extends({ key: index }, element.props, { maxPerRow: maxPerRow }));
         });
       } else {
-        return this.renderItem(children, 1, 1);
-      }
-    }
-  }, {
-    key: "renderItem",
-    value: function renderItem(item, index, length) {
-      if ((0, _isNil3.default)(item)) {
-        return null;
-      } else if ((0, _isArray3.default)(item)) {
-        return this.renderItems(item);
-      } else {
-        var props = _extends({}, item.props);
-        if (!(0, _isNil3.default)(item.type) && !(0, _isNil3.default)(item.type.displayName)) {
-          var maxPerRow = this.props.maxPerRow || length;
-          if (this.props.theme.aspect === "mobile" && !(0, _isNil3.default)(this.props.maxMobileRow)) {
-            maxPerRow = this.props.maxMobileRow;
-          } else if (this.props.theme.aspect === "tablet" && !(0, _isNil3.default)(this.props.maxTabletRow)) {
-            maxPerRow = this.props.maxTabletRow;
-          }
-          props["maxPerRow"] = maxPerRow;
-        }
-        return _react2.default.createElement(item.type, _extends({ key: index }, props));
+        return this.props.children;
       }
     }
   }, {
     key: "render",
     value: function render() {
-      var classes = "flex-grid";
-      if (this.props.container) {
-        classes += " flex-grid-container";
-      }
-      if (this.props.verticalContainer) {
-        classes += " flex-grid-vertical-container";
-      }
+      var classes = "flex-grid ";
       if (!(0, _isNil3.default)(this.props.className)) {
         classes = classes + " " + this.props.className;
       }
@@ -113,7 +77,7 @@ var FlexGrid = function (_React$Component) {
       return _react2.default.createElement(
         _flex2.default,
         { className: classes, style: this.props.style },
-        this.renderItems(this.props.children)
+        this.renderItems()
       );
     }
   }]);
@@ -123,21 +87,17 @@ var FlexGrid = function (_React$Component) {
 
 FlexGrid.propTypes = {
   className: _propTypes2.default.string,
-  container: _propTypes2.default.bool,
   maxMobileRow: _propTypes2.default.number,
   maxPerRow: _propTypes2.default.number,
   maxTabletRow: _propTypes2.default.number,
-  style: _propTypes2.default.object,
-  verticalContainer: _propTypes2.default.bool
+  style: _propTypes2.default.object
 };
 
 FlexGrid.defaultProps = {
   className: "",
-  container: false,
   maxMobileRow: 1,
   maxTabletRow: 1,
-  style: {},
-  verticalContainer: false
+  style: {}
 };
 
-exports.default = (0, _emotionTheming.withTheme)(FlexGrid);
+exports.default = (0, _styledComponents.withTheme)(FlexGrid);
