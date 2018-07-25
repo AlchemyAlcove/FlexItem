@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import Style from "./flex.style";
 import { cloneDeep, isNil } from "lodash";
-import { withTheme } from "styled-components";
+import { withTheme } from "emotion-theming";
 
 class FlexItem extends React.Component {
   render() {

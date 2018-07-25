@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import Style from "./flex.style";
 import { isArray, isNil } from "lodash";
-import { withTheme } from "styled-components";
+import { withTheme } from "emotion-theming";
 
 class FlexGrid extends React.Component {
   calcMaxPerRow(children) {

@@ -28,7 +28,7 @@ var _flex = require("./flex.style");
 
 var _flex2 = _interopRequireDefault(_flex);
 
-var _styledComponents = require("styled-components");
+var _emotionTheming = require("emotion-theming");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -140,4 +140,4 @@ FlexGrid.defaultProps = {
   verticalContainer: false
 };
 
-exports.default = (0, _styledComponents.withTheme)(FlexGrid);
+exports.default = (0, _emotionTheming.withTheme)(FlexGrid);

@@ -4,32 +4,30 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(["\n  &.flex-grid {\n    position: relative;\n    display: flex;\n    max-width: ", "px;\n    justify-content: flex-start;\n    flex-wrap: wrap;\n    margin: 0 auto;\n    width: 100%;\n\n    &.flex-grid-container {\n      margin-left: -", "px;\n      margin-right: -", "px;\n      width: calc(100% + 6px);\n      max-width: calc(100% + 6px);\n\n      > .flex-item {\n        padding-left: ", "px;\n        padding-right: ", "px;\n      }\n    }\n\n    &.flex-grid-vertical-container {\n      margin-top: -", "px;\n      margin-bottom: -", "px;\n\n      > .flex-item {\n        padding-top: ", "px;\n        padding-bottom: ", "px;\n      }\n    }\n  }\n"], ["\n  &.flex-grid {\n    position: relative;\n    display: flex;\n    max-width: ", "px;\n    justify-content: flex-start;\n    flex-wrap: wrap;\n    margin: 0 auto;\n    width: 100%;\n\n    &.flex-grid-container {\n      margin-left: -", "px;\n      margin-right: -", "px;\n      width: calc(100% + 6px);\n      max-width: calc(100% + 6px);\n\n      > .flex-item {\n        padding-left: ", "px;\n        padding-right: ", "px;\n      }\n    }\n\n    &.flex-grid-vertical-container {\n      margin-top: -", "px;\n      margin-bottom: -", "px;\n\n      > .flex-item {\n        padding-top: ", "px;\n        padding-bottom: ", "px;\n      }\n    }\n  }\n"]);
+var _reactEmotion = require("react-emotion");
 
-var _styledComponents = require("styled-components");
-
-var _styledComponents2 = _interopRequireDefault(_styledComponents);
+var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-exports.default = _styledComponents2.default.div(_templateObject, function (props) {
+exports.default = /*#__PURE__*/(0, _reactEmotion2.default)("div", {
+  target: "e1jgdmdg0"
+})("&.flex-grid{position:relative;display:flex;max-width:", function (props) {
   return (props.theme.dimensions || {}).containerWidth || 1200;
-}, function (props) {
+}, "px;justify-content:flex-start;flex-wrap:wrap;margin:0 auto;width:100%;&.flex-grid-container{margin-left:-", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
-}, function (props) {
+}, "px;margin-right:-", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
-}, function (props) {
+}, "px;width:calc(100% + 6px);max-width:calc(100% + 6px);> .flex-item{padding-left:", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
-}, function (props) {
+}, "px;padding-right:", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
-}, function (props) {
+}, "px;}}&.flex-grid-vertical-container{margin-top:-", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
-}, function (props) {
+}, "px;margin-bottom:-", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
-}, function (props) {
+}, "px;> .flex-item{padding-top:", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
-}, function (props) {
+}, "px;padding-bottom:", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
-});
+}, "px;}}}");
