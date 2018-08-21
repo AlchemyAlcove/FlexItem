@@ -18,7 +18,11 @@ exports.default = /*#__PURE__*/(0, _reactEmotion2.default)("div", {
   return (props.theme.dimensions || {}).columnPadding || 3;
 }, "px;margin-right:-", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
-}, "px;width:calc(100% + 6px);max-width:calc(100% + 6px);> .flex-item{padding-left:", function (props) {
+}, "px;width:calc(100% + ", function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
+}, "px);max-width:calc(100% + ", function (props) {
+  return (props.theme.dimensions || {}).columnPadding || 3;
+}, "px);> .flex-item{padding-left:", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
 }, "px;padding-right:", function (props) {
   return (props.theme.dimensions || {}).columnPadding || 3;
