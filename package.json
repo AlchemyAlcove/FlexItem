@@ -4,6 +4,13 @@
   "private": false,
   "description": "React components for styling grids with css flexboxes. Uses emotion under the hood.",
   "author": "AlchemyAlcove",
+  "keywords": [
+    "flexbox",
+    "flexboxes",
+    "flexboxs",
+    "emotion",
+    "grid"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/AlchemyAlcove/FlexItem"
