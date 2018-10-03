@@ -13,8 +13,8 @@ export default styled("div")`
     &.flex-grid-container {
       margin-left: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
       margin-right: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
-      width: calc(100% + ${props => (props.theme.dimensions || {}).columnPadding || 3}px);
-      max-width: calc(100% + ${props => (props.theme.dimensions || {}).columnPadding || 3}px);
+      width: calc(100% + ${props => ((props.theme.dimensions || {}).columnPadding || 3) * 2}px);
+      max-width: calc(100% + ${props => ((props.theme.dimensions || {}).columnPadding || 3) * 2}px);
 
       > .flex-item {
         padding-left: ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
