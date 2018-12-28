@@ -4,13 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _reactEmotion = require("react-emotion");
+var _styled = require("@emotion/styled");
 
-var _reactEmotion2 = _interopRequireDefault(_reactEmotion);
+var _styled2 = _interopRequireDefault(_styled);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = /*#__PURE__*/(0, _reactEmotion2.default)("div", {
+exports.default = /*#__PURE__*/(0, _styled2.default)("div", {
   target: "e1jgdmdg0"
 })("&.flex-grid{position:relative;display:flex;max-width:", function (props) {
   return (props.theme.dimensions || {}).containerWidth || 1200;
