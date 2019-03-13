@@ -1,4 +1,5 @@
 ## [Unreleased]
+- Update emotion to v10
 - NPM keywords
 - Tool version file
 
