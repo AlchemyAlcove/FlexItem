@@ -1,4 +1,4 @@
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 
 module.exports = styled("div")`
   &.demo-grids {
