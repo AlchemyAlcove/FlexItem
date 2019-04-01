@@ -4,10 +4,10 @@ import FlexItem from "../src/flexItem";
 import React from "react";
 import Style from "./app.style";
 import { render } from "react-dom";
-import { injectGlobal } from "emotion";
+import { css, Global } from "@emotion/core";
 import { ThemeProvider } from "emotion-theming";
 
-injectGlobal`
+const globalStyles = css`
   * {
     margin: 0px;
     padding: 0px;
@@ -61,6 +61,7 @@ class App extends React.Component {
     return(
       <ThemeProvider theme={{aspect: this.state.aspect, dimensions: Dimensions}}>
         <Style className="demo-grids">
+          <Global styles={globalStyles}/>
           <FlexGrid>
             <FlexItem>
               <h2>Simple 3 column grid</h2>

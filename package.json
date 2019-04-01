@@ -22,17 +22,16 @@
     "lint:css": "stylelint \"./**/*.style.js\"",
     "build": "babel src --out-dir dist",
     "performance": "node_modules/.bin/webpack --env.performance --env.production --progress",
-    "production": "node_modules/.bin/webpack --env.production --progress",
-    "security": "node_modules/nsp/bin/nsp check"
+    "production": "node_modules/.bin/webpack --env.production --progress"
   },
   "dependencies": {
+    "@emotion/core": ">=10",
+    "@emotion/styled": ">=10",
     "babel-polyfill": ">= 6",
-    "emotion": ">= 9",
     "emotion-theming": ">= 9",
     "lodash": ">= 4",
     "react": ">= 15",
-    "react-dom": ">= 15",
-    "react-emotion": ">= 9"
+    "react-dom": ">= 15"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",

@@ -1,16 +1,17 @@
-machine:
-  node:
-    version: 7.9.0
-
-dependencies:
-  override:
-    - npm install
-
-  cache_directories:
-    - node_modules/
-
-test:
-  override:
-    - npm run lint
-    - npm run lint:css
-    - npm run security
+version: 2
+jobs:
+  build:
+    working_directory: ~/flexitem
+    docker:
+      - image: circleci/node:10.9.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependencies-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          key: dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run: npm run lint
+      - run: npm run lint:css
