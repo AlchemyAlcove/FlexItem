@@ -1,4 +1,4 @@
-const baseConfig = require("./webpack.config.base");
+const baseConfig = require("./webpack.config.dev");
 const { join } = require("path");
 
 const externals = {
@@ -24,6 +24,7 @@ const umdBuild = {
 
 const cjsBuild = {
   ...baseConfig,
+  entry: "./src/index.js",
   plugins: [],
   externals,
   output: {
