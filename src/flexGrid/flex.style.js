@@ -12,6 +12,10 @@ export default styled("div")`
 
     &.flex-grid-container {
       column-gap: ${props => (props.theme.dimensions || {}).columnPadding || 6}px;
+
+      .flex-item {
+        flex-grow: 1;
+      }
     }
 
     &.flex-grid-vertical-container {

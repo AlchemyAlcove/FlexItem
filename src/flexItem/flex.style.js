@@ -6,7 +6,6 @@ export default styled("div")`
     display: flex;
     flex-direction: column;
     margin: 0;
-    flex-grow: 1;
     max-width: 100%;
   }
 `;
