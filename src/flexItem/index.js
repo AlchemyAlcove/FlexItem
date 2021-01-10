@@ -2,27 +2,27 @@ import PropTypes from "prop-types";
 import React from "react";
 import Style from "./flex.style";
 import { cloneDeep, isNil } from "lodash";
-import { withTheme } from "emotion-theming";
+import { withTheme } from "@emotion/react";
 
 class FlexItem extends React.Component {
   render() {
     let classes = "flex-item";
-    if(!isNil(this.props.className)) {
+    if (!isNil(this.props.className)) {
       classes = classes + " " + this.props.className;
     }
 
     let size = this.props.size;
     let style = cloneDeep(this.props.style);
-    if(this.props.theme.aspect === "mobile") {
+    if (this.props.theme.aspect === "mobile") {
       size = this.props.mobileSize || this.props.size;
-    } else if(this.props.theme.aspect === "tablet") {
+    } else if (this.props.theme.aspect === "tablet") {
       size = this.props.tabletSize || this.props.size;
     }
-    style["flexBasis"] = size / this.props.maxPerRow * 100 + "%";
+    style["flexBasis"] = (size / this.props.maxPerRow) * 100 + "%";
 
-    return(
+    return (
       <Style className={classes} style={style}>
-        { this.props.children }
+        {this.props.children}
       </Style>
     );
   }
@@ -34,14 +34,14 @@ FlexItem.propTypes = {
   mobileSize: PropTypes.number,
   size: PropTypes.number,
   style: PropTypes.object,
-  tabletSize: PropTypes.number
+  tabletSize: PropTypes.number,
 };
 
 FlexItem.defaultProps = {
   classname: "",
   maxPerRow: 1,
   size: 1,
-  style: {}
+  style: {},
 };
 
 export default withTheme(FlexItem);

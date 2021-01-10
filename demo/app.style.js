@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 
-module.exports = styled("div")`
+export default styled("div")`
   &.demo-grids {
     .three-column-example {
-      .column-one, .column-two, .column-three {
+      .column-one,
+      .column-two,
+      .column-three {
         color: white;
         text-align: center;
       }
@@ -24,7 +26,7 @@ module.exports = styled("div")`
     .seven-column-example {
       .flex-item div {
         text-align: center;
-        background: #EEEEEE;
+        background: #eeeeee;
         border: 1px solid black;
       }
     }

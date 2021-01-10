@@ -1,17 +1,23 @@
-version: 2
+version: 2.1
 jobs:
   build:
     working_directory: ~/flexitem
     docker:
-      - image: circleci/node:10.9.0
+      - image: circleci/node:14.15.4
     steps:
       - checkout
       - restore_cache:
           key: dependencies-{{ checksum "package.json" }}
-      - run: npm install
+      - run:
+          name: Install
+          command: npm install
       - save_cache:
           key: dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run: npm run lint
-      - run: npm run lint:css
+      - run:
+          name: EsLint
+          command: npm run lint
+      - run: 
+          name: StyleLint
+          command: npm run lint:css
