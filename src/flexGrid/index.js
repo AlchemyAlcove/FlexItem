@@ -35,7 +35,7 @@ class FlexGrid extends React.Component {
     } else if (isArray(item)) {
       return this.renderItems(item);
     } else {
-      let props = { ...item.props };
+      const props = { ...item.props };
       if (!isNil(item.type) && !isNil(item.type.displayName)) {
         let maxPerRow = this.props.maxPerRow || length;
         if (this.props.theme.aspect === "mobile" && !isNil(this.props.maxMobileRow)) {
@@ -43,7 +43,7 @@ class FlexGrid extends React.Component {
         } else if (this.props.theme.aspect === "tablet" && !isNil(this.props.maxTabletRow)) {
           maxPerRow = this.props.maxTabletRow;
         }
-        props["maxPerRow"] = maxPerRow;
+        props.maxPerRow = maxPerRow;
       }
       return <item.type key={index} {...props} />;
     }

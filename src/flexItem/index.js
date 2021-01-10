@@ -12,13 +12,13 @@ class FlexItem extends React.Component {
     }
 
     let size = this.props.size;
-    let style = cloneDeep(this.props.style);
+    const style = cloneDeep(this.props.style);
     if (this.props.theme.aspect === "mobile") {
       size = this.props.mobileSize || this.props.size;
     } else if (this.props.theme.aspect === "tablet") {
       size = this.props.tabletSize || this.props.size;
     }
-    style["flexBasis"] = (size / this.props.maxPerRow) * 100 + "%";
+    style.flexBasis = (size / this.props.maxPerRow) * 100 + "%";
 
     return (
       <Style className={classes} style={style}>
