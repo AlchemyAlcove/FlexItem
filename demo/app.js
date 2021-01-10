@@ -66,11 +66,11 @@ class App extends React.Component {
               <h2>Simple 3 column grid</h2>
               <p>Simple column based data organization is easy by just creating flex items in a flex grid.</p>
               <br />
-              <FlexGrid container verticalContainer className="three-column-example">
+              <FlexGrid container verticalContainer className="three-column-example" maxTabletRow={3}>
                 <FlexItem className="column-one">
                   <div>Thing1</div>
                 </FlexItem>
-                <FlexItem className="column-two" size={2}>
+                <FlexItem className="column-two" size={2} tabletSize={1}>
                   <div>Thing2</div>
                 </FlexItem>
                 <FlexItem className="column-three" size={1}>

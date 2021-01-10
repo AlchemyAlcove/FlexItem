@@ -1,7 +1,7 @@
 export default {
-  columnPadding: 3,
+  columnPadding: 6,
   containerWidth: 1200,
   desktopBreakpoint: 992,
-  rowPadding: 3,
+  rowPadding: 6,
   tabletBreakpoint: 768,
 };
