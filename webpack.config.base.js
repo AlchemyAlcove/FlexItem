@@ -10,10 +10,7 @@ module.exports = {
     port: 3322,
   },
   devtool: process.env.NODE_ENV === "production" ? false : "source-map",
-  entry: {
-    flexitem: ["./src/index.js"],
-    demo: ["./demo/app.js"],
-  },
+  entry: "./demo/app.js",
   module: {
     rules: [
       {
