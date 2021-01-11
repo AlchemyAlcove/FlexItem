@@ -13,8 +13,9 @@ FlexItem is 3 seperate tools in 1.
 ## Installing
 
 ```shell
-npm install --save emotion flex-item
+npm install flex-item
 ```
+
 
 ## ThemeProvider Requirements
 
@@ -140,7 +141,7 @@ But on tablet the column ratios are all different.
 ```javascript
   import React from "react";
   import { render } from "react-dom";
-  import { ThemeProvider } from "emotion-theming";
+  import { ThemeProvider } from "@emotion/react";
 
   class App extends React.Component {
     constructor(props) {
@@ -199,16 +200,6 @@ But on tablet the column ratios are all different.
   }
 ```
 
-### Note
-
-Adding anything other than a FlexItem as a child of FlexGrid can cause the following error.
-
-```javascript
-Warning: React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: undefined.
-```
-
-This is due to passing props to children.
-
 ## Demo
 
 The demo app runs Webpack.
@@ -216,6 +207,7 @@ The demo app runs Webpack.
 Simply run the folling to start the app at [localhost:3322](http://localhost:3322)
 
 ```shell
+npm install
 npm start
 ```
 
@@ -231,7 +223,7 @@ Contributors to this project should:
 
 ```javascript
 import React from "react";
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "@emotion/react";
 
 class Example extends React.Component {
   render() {
