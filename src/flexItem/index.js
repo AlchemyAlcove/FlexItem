@@ -12,7 +12,7 @@ const FlexItem = props => {
 
   const basis = Math.round((size / props.maxPerRow) * 100);
 
-  if (props.container) {
+  if (props.isParentContainer) {
     style.flexBasis = `calc(${basis + "%"} - 6px)`;
   } else {
     style.flexBasis = basis + "%";

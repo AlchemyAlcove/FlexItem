@@ -17,7 +17,7 @@ const FlexGrid = props => {
 
   function renderItem(item) {
     if (React.isValidElement(item) && item.type?.displayName === "FlexItem") {
-      const childProps = { ...item.props, container: props.container };
+      const childProps = { ...item.props, isParentContainer: props.container };
       childProps.maxPerRow = props.maxPerRow || maxPerRow;
       if (theme.aspect === "mobile") {
         childProps.maxPerRow = props.maxMobileRow;
