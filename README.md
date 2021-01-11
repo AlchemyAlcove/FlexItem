@@ -23,7 +23,7 @@ npm install react @emotion/react
 
 ## ThemeProvider Requirements
 
-This component requires a theme provider from the emotion library. Specifically looks for a **dimensions** and an **aspect** variable. dimensions is an object that should have a columnPadding, containerWidth, desktopBreakpoint, rowPadding, or tabletBreakpoint attribute. aspect is a string with options "desktop", "tablet", or "mobile". This should represent the current aspect ratio the user is on.
+This component requires a theme provider from the emotion library. Specifically looks for a **dimensions** and an **aspect** variable. dimensions is an object that should have a columnSpacing, containerWidth, desktopBreakpoint, rowSpacing, or tabletBreakpoint attribute. aspect is a string with options "desktop", "tablet", or "mobile". This should represent the current aspect ratio the user is on.
 
 The **columnSpacing** attribute provides a Flex Grid with spacing between the first tier children (columns). This defaults to 6px if nothing is set. This is only used with container prop attribute.
 
