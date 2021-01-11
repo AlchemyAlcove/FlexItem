@@ -25,7 +25,7 @@
     "url": "https://github.com/AlchemyAlcove/FlexItem"
   },
   "scripts": {
-    "start": "webpack serve --config webpack.config.base.js",
+    "start": "webpack serve --config webpack.config.dev.js",
     "lint": "eslint src",
     "lint:css": "stylelint \"./**/*.js\"",
     "build": "npm-run-all --parallel build:*",
@@ -35,15 +35,13 @@
     "webpack:prod": "cross-env NODE_ENV=production webpack --mode production",
     "prebuild:esm": "rimraf dist/esm",
     "build:esm": "cross-env BABEL_ENV=esm babel src --out-dir dist/esm",
-    "performance": "cross-env NODE_ENV=production node_modules/.bin/webpack --config webpack.config.base.js --progress"
+    "performance": "cross-env NODE_ENV=production node_modules/.bin/webpack --config webpack.config.dev.js --progress"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "7.12.5",
     "@emotion/react": "11.1.4",
     "@emotion/styled": "11.0.0",
     "core-js": "3.8.2",
-    "emotion-theming": "11.0.0",
-    "lodash": "4.17.20",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
