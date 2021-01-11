@@ -10,13 +10,14 @@ const FlexItem = props => {
   const size = props[`${theme.aspect}Size`] ?? props.size;
   const style = { ...props.style };
 
-  const basis = Number((size / props.maxPerRow) * 100).toFixed(2);
+  const basis = Number((size / props.maxPerRow) * 100).toFixed(4);
 
-  if (props.isParentContainer) {
-    style.flexBasis = `calc(${basis + "%"} - 6px)`;
-  } else {
-    style.flexBasis = basis + "%";
-  }
+  // TODO: use this adjustment when the switch is made to column-gap and row-gap for container spacing (waiting on support in Safari)
+  // if (props.isParentContainer) {
+  //   style.flexBasis = `calc(${basis + "%"} - 6px)`;
+  // } else {
+  style.flexBasis = basis + "%";
+  // }
 
   return (
     <div className={classes} css={[flexStyle, style]}>
