@@ -15,7 +15,11 @@ FlexItem is 3 seperate tools in 1.
 ```shell
 npm install flex-item
 ```
+**Note**: `flex-item` requires React >= v17 and Emotion >= v11 be installed in your project.
 
+```shell
+npm install react @emotion/react @emotion/styled
+```
 
 ## ThemeProvider Requirements
 
