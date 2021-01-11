@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
-export default styled("div")`
+export default css`
   &.flex-item {
     position: relative;
     display: flex;

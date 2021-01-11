@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import Style from "./flex.style";
+import flexStyle from "./flex.style";
 import { useTheme } from "@emotion/react";
 
 const FlexItem = props => {
@@ -19,9 +19,9 @@ const FlexItem = props => {
   }
 
   return (
-    <Style className={classes} css={style}>
+    <div className={classes} css={[flexStyle, style]}>
       {props.children}
-    </Style>
+    </div>
   );
 };
 

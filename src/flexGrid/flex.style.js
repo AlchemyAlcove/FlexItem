@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
-export default styled("div")`
+export default theme => css`
   &.flex-grid {
     position: relative;
     display: flex;
-    max-width: ${props => (props.theme.dimensions || {}).containerWidth || 1200}px;
+    max-width: ${(theme.dimensions || {}).containerWidth || 1200}px;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -12,7 +12,7 @@ export default styled("div")`
 
     &.flex-grid-container {
       max-width: 100%;
-      column-gap: ${props => (props.theme.dimensions || {}).columnSpacing || 6}px;
+      column-gap: ${(theme.dimensions || {}).columnSpacing || 6}px;
 
       .flex-item {
         flex-grow: 1;
@@ -20,7 +20,7 @@ export default styled("div")`
     }
 
     &.flex-grid-vertical-container {
-      row-gap: ${props => (props.theme.dimensions || {}).rowSpacing || 6}px;
+      row-gap: ${(theme.dimensions || {}).rowSpacing || 6}px;
     }
   }
 `;

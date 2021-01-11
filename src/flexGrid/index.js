@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import Style from "./flex.style";
+import flexStyle from "./flex.style";
 import { useTheme } from "@emotion/react";
 
 const FlexGrid = props => {
@@ -39,9 +39,9 @@ const FlexGrid = props => {
     .join(" ");
 
   return (
-    <Style className={classes} css={props.style}>
+    <div className={classes} css={[flexStyle, props.style]}>
       {React.Children.map(props.children, renderItem)}
-    </Style>
+    </div>
   );
 };
 
