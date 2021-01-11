@@ -2,11 +2,10 @@ const baseConfig = require("./webpack.config.dev");
 const { join } = require("path");
 
 const externals = {
-  lodash: {
-    commonjs: "lodash",
-    commonjs2: "lodash",
-    root: "_",
-  },
+  react: "React",
+  "@emotion/react": "emotionReact",
+  "@emotion/styled": "emotionStyled",
+  "prop-types": "propTypes",
 };
 
 const umdBuild = {
