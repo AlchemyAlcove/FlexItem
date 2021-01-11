@@ -1,7 +1,12 @@
 ## [Unreleased]
-- Update emotion to v10
+- Update deps: emotion to v11, react to v17.x
+- Remove dependency on lodash.
+- Update build process to provide esm, cjs, and umd versions.
 - NPM keywords
 - Tool version file
+- Add EsLint and Prettier.js to the project.
+- Add typescript type definition file (provides intellisense in editors).
+- Refactor to use function components and React hooks.
 
 ## V3.0.2
 - Provide width padding for each side of container
