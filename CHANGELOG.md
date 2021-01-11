@@ -1,6 +1,7 @@
 ## [Unreleased]
 - Update deps: emotion to v11, react to v17
 - Remove dependency on lodash.
+- Shrink build size from 16Kb to 4Kb by using css from @emotion/react instead of styled from @emotion/styled.
 - Update build process to provide esm, cjs, and umd versions.
 - NPM keywords
 - Tool version file
