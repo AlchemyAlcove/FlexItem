@@ -18,7 +18,7 @@ npm install flex-item
 **Note**: `flex-item` requires React >= v17 and Emotion >= v11 be installed in your project.
 
 ```shell
-npm install react @emotion/react @emotion/styled
+npm install react @emotion/react
 ```
 
 ## ThemeProvider Requirements

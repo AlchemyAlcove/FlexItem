@@ -2,7 +2,7 @@ import Dimensions from "./dimensions";
 import FlexGrid from "../src/flexGrid";
 import FlexItem from "../src/flexItem";
 import React from "react";
-import Style from "./app.style";
+import appStyle from "./app.style";
 import { render } from "react-dom";
 import { css, Global, ThemeProvider } from "@emotion/react";
 
@@ -59,7 +59,7 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={{ aspect: this.state.aspect, dimensions: Dimensions }}>
-        <Style className="demo-grids">
+        <div className="demo-grids" css={appStyle}>
           <Global styles={globalStyles} />
           <FlexGrid>
             <FlexItem>
@@ -117,7 +117,7 @@ class App extends React.Component {
               </FlexGrid>
             </FlexItem>
           </FlexGrid>
-        </Style>
+        </div>
       </ThemeProvider>
     );
   }

@@ -4,7 +4,6 @@ const { join } = require("path");
 const externals = {
   react: "React",
   "@emotion/react": "emotionReact",
-  "@emotion/styled": "emotionStyled",
   "prop-types": "propTypes",
 };
 
