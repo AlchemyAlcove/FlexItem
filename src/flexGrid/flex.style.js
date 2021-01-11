@@ -11,6 +11,7 @@ export default styled("div")`
     width: 100%;
 
     &.flex-grid-container {
+      max-width: 100%;
       column-gap: ${props => (props.theme.dimensions || {}).columnPadding || 6}px;
 
       .flex-item {
