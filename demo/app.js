@@ -8,8 +8,8 @@ import { css, Global, ThemeProvider } from "@emotion/react";
 
 const globalStyles = css`
   * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 `;
