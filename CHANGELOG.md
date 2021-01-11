@@ -1,5 +1,5 @@
 ## [Unreleased]
-- Update deps: emotion to v11, react to v17.x
+- Update deps: emotion to v11, react to v17
 - Remove dependency on lodash.
 - Update build process to provide esm, cjs, and umd versions.
 - NPM keywords
