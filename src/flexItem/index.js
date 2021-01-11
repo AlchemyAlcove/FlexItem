@@ -10,7 +10,7 @@ const FlexItem = props => {
   const size = props[`${theme.aspect}Size`] ?? props.size;
   const style = { ...props.style };
 
-  const basis = Math.round((size / props.maxPerRow) * 100);
+  const basis = Number((size / props.maxPerRow) * 100).toFixed(2);
 
   if (props.isParentContainer) {
     style.flexBasis = `calc(${basis + "%"} - 6px)`;

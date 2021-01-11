@@ -12,7 +12,7 @@ export default styled("div")`
 
     &.flex-grid-container {
       max-width: 100%;
-      column-gap: ${props => (props.theme.dimensions || {}).columnPadding || 6}px;
+      column-gap: ${props => (props.theme.dimensions || {}).columnSpacing || 6}px;
 
       .flex-item {
         flex-grow: 1;
@@ -20,7 +20,7 @@ export default styled("div")`
     }
 
     &.flex-grid-vertical-container {
-      row-gap: ${props => (props.theme.dimensions || {}).columnPadding || 6}px;
+      row-gap: ${props => (props.theme.dimensions || {}).rowSpacing || 6}px;
     }
   }
 `;
