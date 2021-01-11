@@ -1,32 +1,32 @@
 import PropTypes from "prop-types";
 import React from "react";
-import Style from "./flex.style";
-import { cloneDeep, isNil } from "lodash";
-import { withTheme } from "emotion-theming";
+import flexStyle from "./flex.style";
+import { useTheme } from "@emotion/react";
 
-class FlexItem extends React.Component {
-  render() {
-    let classes = "flex-item";
-    if(!isNil(this.props.className)) {
-      classes = classes + " " + this.props.className;
-    }
+const FlexItem = props => {
+  const theme = useTheme();
+  const classes = ["flex-item", props.className].filter(Boolean).join(" ");
 
-    let size = this.props.size;
-    let style = cloneDeep(this.props.style);
-    if(this.props.theme.aspect === "mobile") {
-      size = this.props.mobileSize || this.props.size;
-    } else if(this.props.theme.aspect === "tablet") {
-      size = this.props.tabletSize || this.props.size;
-    }
-    style["flexBasis"] = size / this.props.maxPerRow * 100 + "%";
+  const size = props[`${theme.aspect}Size`] ?? props.size;
+  const style = { ...props.style };
 
-    return(
-      <Style className={classes} style={style}>
-        { this.props.children }
-      </Style>
-    );
-  }
-}
+  const basis = Number((size / props.maxPerRow) * 100).toFixed(4);
+
+  // TODO: use this adjustment when the switch is made to column-gap and row-gap for container spacing (waiting on support in Safari)
+  // if (props.isParentContainer) {
+  //   style.flexBasis = `calc(${basis + "%"} - 6px)`;
+  // } else {
+  style.flexBasis = basis + "%";
+  // }
+
+  return (
+    <div className={classes} css={[flexStyle, style]}>
+      {props.children}
+    </div>
+  );
+};
+
+FlexItem.displayName = "FlexItem";
 
 FlexItem.propTypes = {
   className: PropTypes.string,
@@ -34,14 +34,14 @@ FlexItem.propTypes = {
   mobileSize: PropTypes.number,
   size: PropTypes.number,
   style: PropTypes.object,
-  tabletSize: PropTypes.number
+  tabletSize: PropTypes.number,
 };
 
 FlexItem.defaultProps = {
   classname: "",
   maxPerRow: 1,
   size: 1,
-  style: {}
+  style: {},
 };
 
-export default withTheme(FlexItem);
+export default FlexItem;

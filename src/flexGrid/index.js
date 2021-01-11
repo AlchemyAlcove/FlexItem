@@ -1,73 +1,51 @@
 import PropTypes from "prop-types";
-import React from "react";
-import Style from "./flex.style";
-import { isArray, isNil } from "lodash";
-import { withTheme } from "emotion-theming";
+import React, { useState } from "react";
+import flexStyle from "./flex.style";
+import { useTheme } from "@emotion/react";
 
-class FlexGrid extends React.Component {
-  calcMaxPerRow(children) {
+const FlexGrid = props => {
+  const theme = useTheme();
+  const [maxPerRow] = useState(() => calcMaxPerRow(props.children));
+
+  function calcMaxPerRow(children) {
     let max = 0;
-    children.forEach((child) => {
-      if(!isNil(child) && !isNil(child.props) && !isNil(child.props.size)) {
-        max += child.props.size;
-      } else if(!isNil(child)) {
-        max++;
-      }
+    children.forEach?.(child => {
+      max += child?.props?.size ?? 1;
     });
-    return(max);
+    return max || 1;
   }
 
-  renderItems(children) {
-    if(isNil(children)) {
-      return(null);
-    } else if(isArray(children)) {
-      return(children.map((element, index) => {
-        return(this.renderItem(element, index, this.calcMaxPerRow(children)));
-      }));
-    } else {
-      return(this.renderItem(children, 1, 1));
-    }
-  }
-
-  renderItem(item, index, length) {
-    if(isNil(item)) {
-      return(null);
-    } else if(isArray(item)) {
-      return(this.renderItems(item));
-    } else {
-      let props = {...item.props};
-      if(!isNil(item.type) && !isNil(item.type.displayName)) {
-        let maxPerRow = this.props.maxPerRow || length;
-        if(this.props.theme.aspect === "mobile" && !isNil(this.props.maxMobileRow)) {
-          maxPerRow = this.props.maxMobileRow;
-        } else if(this.props.theme.aspect === "tablet" && !isNil(this.props.maxTabletRow)) {
-          maxPerRow = this.props.maxTabletRow;
-        }
-        props["maxPerRow"] = maxPerRow;
+  function renderItem(item) {
+    if (React.isValidElement(item) && item.type?.displayName === "FlexItem") {
+      const childProps = { ...item.props, isParentContainer: props.container };
+      childProps.maxPerRow = props.maxPerRow || maxPerRow;
+      if (theme.aspect === "mobile") {
+        childProps.maxPerRow = props.maxMobileRow;
+      } else if (theme.aspect === "tablet") {
+        childProps.maxPerRow = props.maxTabletRow;
       }
-      return(<item.type key={index} {...props}/>);
+      return <item.type {...childProps} />;
     }
+    return item;
   }
 
-  render() {
-    let classes = "flex-grid";
-    if(this.props.container) {
-      classes += " flex-grid-container";
-    }
-    if(this.props.verticalContainer) {
-      classes += " flex-grid-vertical-container";
-    }
-    if(!isNil(this.props.className)) {
-      classes = classes + " " + this.props.className;
-    }
+  const classes = [
+    "flex-grid",
+    props.container && "flex-grid-container",
+    props.verticalContainer && "flex-grid-vertical-container",
+    props.className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
-    return(
-      <Style className={classes} style={this.props.style}>
-        {this.renderItems(this.props.children)}
-      </Style>
-    );
-  }
-}
+  return (
+    <div className={classes} css={[flexStyle, props.style]}>
+      {React.Children.map(props.children, renderItem)}
+    </div>
+  );
+};
+
+FlexGrid.displayName = "FlexGrid";
 
 FlexGrid.propTypes = {
   className: PropTypes.string,
@@ -76,7 +54,7 @@ FlexGrid.propTypes = {
   maxPerRow: PropTypes.number,
   maxTabletRow: PropTypes.number,
   style: PropTypes.object,
-  verticalContainer: PropTypes.bool
+  verticalContainer: PropTypes.bool,
 };
 
 FlexGrid.defaultProps = {
@@ -85,7 +63,7 @@ FlexGrid.defaultProps = {
   maxMobileRow: 1,
   maxTabletRow: 1,
   style: {},
-  verticalContainer: false
+  verticalContainer: false,
 };
 
-export default withTheme(FlexGrid);
+export default FlexGrid;

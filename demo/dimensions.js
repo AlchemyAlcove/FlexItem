@@ -1,7 +1,7 @@
-module.exports = {
-  columnPadding: 3,
+export default {
+  columnSpacing: 6,
   containerWidth: 1200,
   desktopBreakpoint: 992,
-  rowPadding: 3,
-  tabletBreakpoint: 768
+  rowSpacing: 6,
+  tabletBreakpoint: 768,
 };

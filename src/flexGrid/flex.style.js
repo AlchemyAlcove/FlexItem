@@ -1,34 +1,41 @@
-import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
-export default styled("div")`
+export default theme => css`
   &.flex-grid {
     position: relative;
     display: flex;
-    max-width: ${props => (props.theme.dimensions || {}).containerWidth || 1200}px;
+    max-width: ${(theme.dimensions || {}).containerWidth || 1200}px;
     justify-content: flex-start;
     flex-wrap: wrap;
     margin: 0 auto;
     width: 100%;
 
     &.flex-grid-container {
-      margin-left: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
-      margin-right: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
-      width: calc(100% + ${props => ((props.theme.dimensions || {}).columnPadding || 3) * 2}px);
-      max-width: calc(100% + ${props => ((props.theme.dimensions || {}).columnPadding || 3) * 2}px);
+      ${
+        "" /* 
+      TODO: once Safari supports column-gap and row-gap,
+      switch to using this for column and row spacing.
+      column-gap: ${(theme.dimensions || {}).columnSpacing || 6}px; */
+      }
+      margin-left: -${(theme.dimensions || {}).columnSpacing / 2 || 3}px;
+      margin-right: -${(theme.dimensions || {}).columnSpacing / 2 || 3}px;
+      width: calc(100% + ${(theme.dimensions || {}).columnSpacing || 6}px);
+      max-width: calc(100% + ${(theme.dimensions || {}).columnSpacing || 6}px);
 
-      > .flex-item {
-        padding-left: ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
-        padding-right: ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+      .flex-item {
+        ${"" /* flex-grow: 1; */}
+        padding-left: ${(theme.dimensions || {}).columnSpacing / 2 || 3}px;
+        padding-right: ${(theme.dimensions || {}).columnSpacing / 2 || 3}px;
       }
     }
 
     &.flex-grid-vertical-container {
-      margin-top: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
-      margin-bottom: -${props => (props.theme.dimensions || {}).columnPadding || 3}px;
-
+      ${"" /* row-gap: ${(theme.dimensions || {}).rowSpacing || 6}px; */}
+      margin-top: -${(theme.dimensions || {}).rowSpacing / 2 || 3}px;
+      margin-bottom: -${(theme.dimensions || {}).rowSpacing / 2 || 3}px;
       > .flex-item {
-        padding-top: ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
-        padding-bottom: ${props => (props.theme.dimensions || {}).columnPadding || 3}px;
+        padding-top: ${(theme.dimensions || {}).rowSpacing / 2 || 3}px;
+        padding-bottom: ${(theme.dimensions || {}).rowSpacing / 2 || 3}px;
       }
     }
   }

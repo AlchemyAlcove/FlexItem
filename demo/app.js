@@ -2,15 +2,14 @@ import Dimensions from "./dimensions";
 import FlexGrid from "../src/flexGrid";
 import FlexItem from "../src/flexItem";
 import React from "react";
-import Style from "./app.style";
+import appStyle from "./app.style";
 import { render } from "react-dom";
-import { css, Global } from "@emotion/core";
-import { ThemeProvider } from "emotion-theming";
+import { css, Global, ThemeProvider } from "@emotion/react";
 
 const globalStyles = css`
   * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 `;
@@ -20,7 +19,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      aspect: this.fetchAspect()
+      aspect: this.fetchAspect(),
     };
   }
 
@@ -42,48 +41,48 @@ class App extends React.Component {
     );
 
     let aspect = "desktop";
-    if(width < Dimensions.tabletBreakpoint) {
+    if (width < Dimensions.tabletBreakpoint) {
       aspect = "mobile";
-    } else if(width < Dimensions.desktopBreakpoint) {
+    } else if (width < Dimensions.desktopBreakpoint) {
       aspect = "tablet";
     }
-    return(aspect);
+    return aspect;
   }
 
   updateAspect() {
     const aspect = this.fetchAspect();
-    if(aspect !== this.state.aspect) {
-      this.setState({aspect: aspect});
+    if (aspect !== this.state.aspect) {
+      this.setState({ aspect: aspect });
     }
   }
 
   render() {
-    return(
-      <ThemeProvider theme={{aspect: this.state.aspect, dimensions: Dimensions}}>
-        <Style className="demo-grids">
-          <Global styles={globalStyles}/>
+    return (
+      <ThemeProvider theme={{ aspect: this.state.aspect, dimensions: Dimensions }}>
+        <div className="demo-grids" css={appStyle}>
+          <Global styles={globalStyles} />
           <FlexGrid>
             <FlexItem>
               <h2>Simple 3 column grid</h2>
               <p>Simple column based data organization is easy by just creating flex items in a flex grid.</p>
-              <br/>
-              <FlexGrid container verticalContainer className="three-column-example">
+              <br />
+              <FlexGrid container verticalContainer className="three-column-example" maxTabletRow={3}>
                 <FlexItem className="column-one">
                   <div>Thing1</div>
                 </FlexItem>
-                <FlexItem className="column-two" size={2}>
+                <FlexItem className="column-two" size={2} tabletSize={1}>
                   <div>Thing2</div>
                 </FlexItem>
                 <FlexItem className="column-three" size={1}>
                   <div>Thing3</div>
                 </FlexItem>
               </FlexGrid>
-              <br/>
-              <br/>
-              <br/>
+              <br />
+              <br />
+              <br />
               <h2>Max 7 column grid</h2>
               <p>FlexItem allows you to control how many items show in each row.</p>
-              <br/>
+              <br />
               <FlexGrid container verticalContainer maxPerRow={7} maxTabletRow={4} className="seven-column-example">
                 <FlexItem tabletSize={4} className="column-one">
                   <div>Thing1</div>
@@ -118,15 +117,12 @@ class App extends React.Component {
               </FlexGrid>
             </FlexItem>
           </FlexGrid>
-        </Style>
+        </div>
       </ThemeProvider>
     );
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  render(
-    <App/>,
-    document.getElementById("demo")
-  );
+  render(<App />, document.getElementById("demo"));
 });

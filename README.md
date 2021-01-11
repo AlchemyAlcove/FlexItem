@@ -13,20 +13,25 @@ FlexItem is 3 seperate tools in 1.
 ## Installing
 
 ```shell
-npm install --save emotion flex-item
+npm install flex-item
+```
+**Note**: `flex-item` requires React >= v17 and Emotion >= v11 be installed in your project.
+
+```shell
+npm install react @emotion/react
 ```
 
 ## ThemeProvider Requirements
 
-This component requires a theme provider from the emotion library. Specifically looks for a **dimensions** and an **aspect** variable. dimensions is an object that should have a columnPadding, containerWidth, desktopBreakpoint, rowPadding, or tabletBreakpoint attribute. aspect is a string with options "desktop", "tablet", or "mobile". This should represent the current aspect ratio the user is on.
+This component requires a theme provider from the emotion library. Specifically looks for a **dimensions** and an **aspect** variable. dimensions is an object that should have a columnSpacing, containerWidth, desktopBreakpoint, rowSpacing, or tabletBreakpoint attribute. aspect is a string with options "desktop", "tablet", or "mobile". This should represent the current aspect ratio the user is on.
 
-The **columnPadding** attribute provides a Flex Grid with padding around each first tier children. This defaults to 3 if nothing is set. This is only used with container prop attribute.
+The **columnSpacing** attribute provides a Flex Grid with spacing between the first tier children (columns). This defaults to 6px if nothing is set. This is only used with container prop attribute.
 
 The **containerWidth** attribute provides a container or max with for the Flex Grid. If you set a containerWidth of 1200 for example, that would limit the FlexGrid to 1200px wide. This defaults to 1200px.
 
 The **desktopBreakpoint** is first pixel in which the browser size is considered a desktop browser. If you set a desktopBreakpoint of 992 for example, that would start using the tablet media queries at 991px.
 
-The **rowPadding** attribute provides a Flex Grid with padding around each first tier children. This defaults to 3 if nothing is set. This is only used with verticalContainer prop attribute.
+The **rowSpacing** attribute provides a Flex Grid with spacing between each row of first tier children. This defaults to 6px if nothing is set. This is only used with verticalContainer prop attribute.
 
 The **tabletBreakpoint** is first pixel in which the browser size is considered a tablet browser. If you set a tabletBreakpoint of 768 for example, that would start using the mobile media queries at 767px.
 
@@ -140,7 +145,7 @@ But on tablet the column ratios are all different.
 ```javascript
   import React from "react";
   import { render } from "react-dom";
-  import { ThemeProvider } from "emotion-theming";
+  import { ThemeProvider } from "@emotion/react";
 
   class App extends React.Component {
     constructor(props) {
@@ -199,16 +204,6 @@ But on tablet the column ratios are all different.
   }
 ```
 
-### Note
-
-Adding anything other than a FlexItem as a child of FlexGrid can cause the following error.
-
-```javascript
-Warning: React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: undefined.
-```
-
-This is due to passing props to children.
-
 ## Demo
 
 The demo app runs Webpack.
@@ -216,6 +211,7 @@ The demo app runs Webpack.
 Simply run the folling to start the app at [localhost:3322](http://localhost:3322)
 
 ```shell
+npm install
 npm start
 ```
 
@@ -231,7 +227,7 @@ Contributors to this project should:
 
 ```javascript
 import React from "react";
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "@emotion/react";
 
 class Example extends React.Component {
   render() {

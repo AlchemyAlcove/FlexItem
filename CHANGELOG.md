@@ -1,7 +1,12 @@
 ## [Unreleased]
-- Update emotion to v10
+- Update dependencies: emotion to v11, react to v17, remove dependency on lodash.
+- Shrink build size from 16Kb to 4Kb by using css from @emotion/react instead of styled from @emotion/styled.
+- Update build process to provide esm, cjs, and umd versions.
 - NPM keywords
 - Tool version file
+- Add EsLint and Prettier.js to the project.
+- Add typescript type definition file (provides intellisense in editors).
+- Refactor to use function components and React hooks.
 
 ## V3.0.2
 - Provide width padding for each side of container
