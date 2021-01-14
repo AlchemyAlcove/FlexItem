@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import flexStyle from "./flex.style";
-import { useTheme } from "@emotion/react";
+import { useTheme } from "emotion-theming";
 
 const FlexItem = props => {
   const theme = useTheme();

@@ -145,7 +145,7 @@ But on tablet the column ratios are all different.
 ```javascript
   import React from "react";
   import { render } from "react-dom";
-  import { ThemeProvider } from "@emotion/react";
+  import { ThemeProvider } from "emotion-theming";
 
   class App extends React.Component {
     constructor(props) {
@@ -227,7 +227,7 @@ Contributors to this project should:
 
 ```javascript
 import React from "react";
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider } from "emotion-theming";
 
 class Example extends React.Component {
   render() {

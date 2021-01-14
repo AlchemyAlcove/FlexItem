@@ -4,7 +4,8 @@ import FlexItem from "../src/flexItem";
 import React from "react";
 import appStyle from "./app.style";
 import { render } from "react-dom";
-import { css, Global, ThemeProvider } from "@emotion/react";
+import { css, Global } from "@emotion/core";
+import { ThemeProvider } from "emotion-theming";
 
 const globalStyles = css`
   * {

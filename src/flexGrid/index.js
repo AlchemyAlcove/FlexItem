@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import flexStyle from "./flex.style";
-import { useTheme } from "@emotion/react";
+import { useTheme } from "emotion-theming";
 
 const FlexGrid = props => {
   const theme = useTheme();
@@ -39,7 +39,7 @@ const FlexGrid = props => {
     .join(" ");
 
   return (
-    <div className={classes} css={[flexStyle, props.style]}>
+    <div className={classes} css={theme => [flexStyle(theme), props.style]}>
       {React.Children.map(props.children, renderItem)}
     </div>
   );
