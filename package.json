@@ -1,6 +1,6 @@
 {
   "name": "flex-item",
-  "version": "4.0.2-beta.3",
+  "version": "4.0.2",
   "private": false,
   "description": "React components for styling grids with css flexboxes. Uses emotion under the hood.",
   "author": "AlchemyAlcove",
