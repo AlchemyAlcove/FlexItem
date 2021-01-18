@@ -2,9 +2,21 @@ const baseConfig = require("./webpack.config.dev");
 const { join } = require("path");
 
 const externals = {
-  react: "React",
-  "@emotion/react": "emotionReact",
-  "prop-types": "PropTypes",
+  react: {
+    commonjs: "react",
+    commonjs2: "react",
+    root: "React"
+  },
+  "@emotion/react": {
+    commonjs: "@emotion/react",
+    commonjs2: "@emotion/react",
+    root: "emotionReact"
+  },
+  "prop-types": {
+    commonjs: "prop-types",
+    commonjs2: "prop-types",
+    root: "PropTypes"
+  },
 };
 
 const umdBuild = {
