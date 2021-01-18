@@ -1,6 +1,9 @@
 ## [Unreleased]
 -
 
+## V4.0.2
+- Bug fix: correct 'propTypes' to 'PropTypes' for externalized package reference.
+
 ## V4.0.1
 - Bug fix: update path to cjs modules in index.js entry point.
 
