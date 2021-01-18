@@ -1,6 +1,9 @@
 ## [Unreleased]
 -
 
+## V4.0.1
+- Bug fix: update path to cjs modules in index.js entry point.
+
 ## V4.0.0
 - Update dependencies: emotion to v11, react to v17, remove dependency on lodash.
 - Shrink build size from 16Kb to 4Kb by using css from @emotion/react instead of styled from @emotion/styled.
