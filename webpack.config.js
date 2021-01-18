@@ -4,7 +4,7 @@ const { join } = require("path");
 const externals = {
   react: "React",
   "@emotion/react": "emotionReact",
-  "prop-types": "propTypes",
+  "prop-types": "PropTypes",
 };
 
 const umdBuild = {
