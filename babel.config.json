@@ -9,13 +9,17 @@
         "corejs": 3
       }
     ],
+    "@babel/preset-react",
     [
-      "@babel/preset-react",
-      { "runtime": "automatic", "importSource": "@emotion/react" }
+      "@emotion/babel-preset-css-prop",
+      {
+        "autoLabel": "always",
+        "labelFormat": "[local]",
+        "sourceMap": false
+      }
     ]
   ],
   "plugins": [
-    "@emotion/babel-plugin",
     "@babel/plugin-proposal-class-properties"
   ],
   "env": {
