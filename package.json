@@ -81,7 +81,7 @@
     "stylelint-custom-processor-loader": "0.6.0",
     "stylelint-prettier": "1.1.2",
     "stylelint-processor-styled-components": "1.10.0",
-    "webpack": "4.45.0",
+    "webpack": "5.94.0",
     "webpack-bundle-analyzer": "4.3.0",
     "webpack-cli": "4.3.1",
     "webpack-dev-server": "3.11.1"
